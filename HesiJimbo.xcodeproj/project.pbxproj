@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C7F80DF2044BE5500128D28 /* reddift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA351012044BAAE00C7BBC5 /* reddift.framework */; };
 		8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BC2044A57B003AC728 /* AppDelegate.swift */; };
 		8CB658BF2044A57B003AC728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BE2044A57B003AC728 /* ViewController.swift */; };
 		8CB658C22044A57B003AC728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB658C02044A57B003AC728 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CA351012044BAAE00C7BBC5 /* reddift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = reddift.framework; path = ../hesijimbo/Carthage/Build/iOS/reddift.framework; sourceTree = "<group>"; };
 		8CB658B92044A57A003AC728 /* HesiJimbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HesiJimbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB658BC2044A57B003AC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB658BE2044A57B003AC728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C7F80DF2044BE5500128D28 /* reddift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CA350FA2044B7E300C7BBC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CA351012044BAAE00C7BBC5 /* reddift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8CB658B02044A57A003AC728 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +94,12 @@
 				8CB658D32044A57B003AC728 /* HesiJimboTests */,
 				8CB658DE2044A57B003AC728 /* HesiJimboUITests */,
 				8CB658BA2044A57A003AC728 /* Products */,
+				8CA350FA2044B7E300C7BBC5 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 1;
 		};
 		8CB658BA2044A57A003AC728 /* Products */ = {
 			isa = PBXGroup;
@@ -135,6 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CB658E42044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimbo" */;
 			buildPhases = (
+				8CA351032044BAF200C7BBC5 /* Carthage */,
 				8CB658B52044A57A003AC728 /* Sources */,
 				8CB658B62044A57A003AC728 /* Frameworks */,
 				8CB658B72044A57A003AC728 /* Resources */,
@@ -256,6 +272,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CA351032044BAF200C7BBC5 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/reddift.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/reddift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CB658B52044A57A003AC728 /* Sources */ = {
@@ -432,9 +467,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46A8N9K87E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HesiJimbo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimbo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hesijimbo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -447,9 +486,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46A8N9K87E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HesiJimbo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimbo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hesijimbo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
