@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BC2044A57B003AC728 /* AppDelegate.swift */; };
+		8CB658BF2044A57B003AC728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BE2044A57B003AC728 /* ViewController.swift */; };
+		8CB658C22044A57B003AC728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB658C02044A57B003AC728 /* Main.storyboard */; };
+		8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658C32044A57B003AC728 /* HesiJimbo.xcdatamodeld */; };
+		8CB658C72044A57B003AC728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB658C62044A57B003AC728 /* Assets.xcassets */; };
+		8CB658CA2044A57B003AC728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB658C82044A57B003AC728 /* LaunchScreen.storyboard */; };
+		8CB658D52044A57B003AC728 /* HesiJimboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658D42044A57B003AC728 /* HesiJimboTests.swift */; };
+		8CB658E02044A57B003AC728 /* HesiJimboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658DF2044A57B003AC728 /* HesiJimboUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CB658D12044A57B003AC728 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CB658B12044A57A003AC728 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CB658B82044A57A003AC728;
+			remoteInfo = HesiJimbo;
+		};
+		8CB658DC2044A57B003AC728 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CB658B12044A57A003AC728 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CB658B82044A57A003AC728;
+			remoteInfo = HesiJimbo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CB658B92044A57A003AC728 /* HesiJimbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HesiJimbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB658BC2044A57B003AC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8CB658BE2044A57B003AC728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CB658C12044A57B003AC728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CB658C42044A57B003AC728 /* HesiJimbo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HesiJimbo.xcdatamodel; sourceTree = "<group>"; };
+		8CB658C62044A57B003AC728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CB658C92044A57B003AC728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CB658CB2044A57B003AC728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB658D02044A57B003AC728 /* HesiJimboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HesiJimboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB658D42044A57B003AC728 /* HesiJimboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesiJimboTests.swift; sourceTree = "<group>"; };
+		8CB658D62044A57B003AC728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB658DB2044A57B003AC728 /* HesiJimboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HesiJimboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB658DF2044A57B003AC728 /* HesiJimboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesiJimboUITests.swift; sourceTree = "<group>"; };
+		8CB658E12044A57B003AC728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CB658B62044A57A003AC728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB658CD2044A57B003AC728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB658D82044A57B003AC728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CB658B02044A57A003AC728 = {
+			isa = PBXGroup;
+			children = (
+				8CB658BB2044A57A003AC728 /* HesiJimbo */,
+				8CB658D32044A57B003AC728 /* HesiJimboTests */,
+				8CB658DE2044A57B003AC728 /* HesiJimboUITests */,
+				8CB658BA2044A57A003AC728 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CB658BA2044A57A003AC728 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CB658B92044A57A003AC728 /* HesiJimbo.app */,
+				8CB658D02044A57B003AC728 /* HesiJimboTests.xctest */,
+				8CB658DB2044A57B003AC728 /* HesiJimboUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CB658BB2044A57A003AC728 /* HesiJimbo */ = {
+			isa = PBXGroup;
+			children = (
+				8CB658BC2044A57B003AC728 /* AppDelegate.swift */,
+				8CB658BE2044A57B003AC728 /* ViewController.swift */,
+				8CB658C02044A57B003AC728 /* Main.storyboard */,
+				8CB658C62044A57B003AC728 /* Assets.xcassets */,
+				8CB658C82044A57B003AC728 /* LaunchScreen.storyboard */,
+				8CB658CB2044A57B003AC728 /* Info.plist */,
+				8CB658C32044A57B003AC728 /* HesiJimbo.xcdatamodeld */,
+			);
+			path = HesiJimbo;
+			sourceTree = "<group>";
+		};
+		8CB658D32044A57B003AC728 /* HesiJimboTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CB658D42044A57B003AC728 /* HesiJimboTests.swift */,
+				8CB658D62044A57B003AC728 /* Info.plist */,
+			);
+			path = HesiJimboTests;
+			sourceTree = "<group>";
+		};
+		8CB658DE2044A57B003AC728 /* HesiJimboUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CB658DF2044A57B003AC728 /* HesiJimboUITests.swift */,
+				8CB658E12044A57B003AC728 /* Info.plist */,
+			);
+			path = HesiJimboUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CB658B82044A57A003AC728 /* HesiJimbo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CB658E42044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimbo" */;
+			buildPhases = (
+				8CB658B52044A57A003AC728 /* Sources */,
+				8CB658B62044A57A003AC728 /* Frameworks */,
+				8CB658B72044A57A003AC728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HesiJimbo;
+			productName = HesiJimbo;
+			productReference = 8CB658B92044A57A003AC728 /* HesiJimbo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CB658CF2044A57B003AC728 /* HesiJimboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CB658E72044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimboTests" */;
+			buildPhases = (
+				8CB658CC2044A57B003AC728 /* Sources */,
+				8CB658CD2044A57B003AC728 /* Frameworks */,
+				8CB658CE2044A57B003AC728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CB658D22044A57B003AC728 /* PBXTargetDependency */,
+			);
+			name = HesiJimboTests;
+			productName = HesiJimboTests;
+			productReference = 8CB658D02044A57B003AC728 /* HesiJimboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8CB658DA2044A57B003AC728 /* HesiJimboUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CB658EA2044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimboUITests" */;
+			buildPhases = (
+				8CB658D72044A57B003AC728 /* Sources */,
+				8CB658D82044A57B003AC728 /* Frameworks */,
+				8CB658D92044A57B003AC728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CB658DD2044A57B003AC728 /* PBXTargetDependency */,
+			);
+			name = HesiJimboUITests;
+			productName = HesiJimboUITests;
+			productReference = 8CB658DB2044A57B003AC728 /* HesiJimboUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CB658B12044A57A003AC728 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Amos Codes";
+				TargetAttributes = {
+					8CB658B82044A57A003AC728 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					8CB658CF2044A57B003AC728 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8CB658B82044A57A003AC728;
+					};
+					8CB658DA2044A57B003AC728 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8CB658B82044A57A003AC728;
+					};
+				};
+			};
+			buildConfigurationList = 8CB658B42044A57A003AC728 /* Build configuration list for PBXProject "HesiJimbo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CB658B02044A57A003AC728;
+			productRefGroup = 8CB658BA2044A57A003AC728 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CB658B82044A57A003AC728 /* HesiJimbo */,
+				8CB658CF2044A57B003AC728 /* HesiJimboTests */,
+				8CB658DA2044A57B003AC728 /* HesiJimboUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CB658B72044A57A003AC728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB658CA2044A57B003AC728 /* LaunchScreen.storyboard in Resources */,
+				8CB658C72044A57B003AC728 /* Assets.xcassets in Resources */,
+				8CB658C22044A57B003AC728 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB658CE2044A57B003AC728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB658D92044A57B003AC728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CB658B52044A57A003AC728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB658BF2044A57B003AC728 /* ViewController.swift in Sources */,
+				8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */,
+				8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB658CC2044A57B003AC728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB658D52044A57B003AC728 /* HesiJimboTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CB658D72044A57B003AC728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CB658E02044A57B003AC728 /* HesiJimboUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CB658D22044A57B003AC728 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CB658B82044A57A003AC728 /* HesiJimbo */;
+			targetProxy = 8CB658D12044A57B003AC728 /* PBXContainerItemProxy */;
+		};
+		8CB658DD2044A57B003AC728 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CB658B82044A57A003AC728 /* HesiJimbo */;
+			targetProxy = 8CB658DC2044A57B003AC728 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CB658C02044A57B003AC728 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CB658C12044A57B003AC728 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CB658C82044A57B003AC728 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CB658C92044A57B003AC728 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CB658E22044A57B003AC728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8CB658E32044A57B003AC728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CB658E52044A57B003AC728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46A8N9K87E;
+				INFOPLIST_FILE = HesiJimbo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimbo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CB658E62044A57B003AC728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46A8N9K87E;
+				INFOPLIST_FILE = HesiJimbo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimbo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CB658E82044A57B003AC728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46A8N9K87E;
+				INFOPLIST_FILE = HesiJimboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HesiJimbo.app/HesiJimbo";
+			};
+			name = Debug;
+		};
+		8CB658E92044A57B003AC728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46A8N9K87E;
+				INFOPLIST_FILE = HesiJimboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HesiJimbo.app/HesiJimbo";
+			};
+			name = Release;
+		};
+		8CB658EB2044A57B003AC728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46A8N9K87E;
+				INFOPLIST_FILE = HesiJimboUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HesiJimbo;
+			};
+			name = Debug;
+		};
+		8CB658EC2044A57B003AC728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46A8N9K87E;
+				INFOPLIST_FILE = HesiJimboUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codes.amos.hesi.HesiJimboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HesiJimbo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CB658B42044A57A003AC728 /* Build configuration list for PBXProject "HesiJimbo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB658E22044A57B003AC728 /* Debug */,
+				8CB658E32044A57B003AC728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CB658E42044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimbo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB658E52044A57B003AC728 /* Debug */,
+				8CB658E62044A57B003AC728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CB658E72044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB658E82044A57B003AC728 /* Debug */,
+				8CB658E92044A57B003AC728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CB658EA2044A57B003AC728 /* Build configuration list for PBXNativeTarget "HesiJimboUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CB658EB2044A57B003AC728 /* Debug */,
+				8CB658EC2044A57B003AC728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8CB658C32044A57B003AC728 /* HesiJimbo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8CB658C42044A57B003AC728 /* HesiJimbo.xcdatamodel */,
+			);
+			currentVersion = 8CB658C42044A57B003AC728 /* HesiJimbo.xcdatamodel */;
+			path = HesiJimbo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8CB658B12044A57A003AC728 /* Project object */;
+}
