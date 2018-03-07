@@ -18,6 +18,7 @@ class FetchVideoFeedServiceTests: XCTestCase {
 			XCTAssertEqual(listing.items.count, 9)
 
 			let item = listing.items.first!
+			XCTAssertEqual(item.id, "8205ke")
 			XCTAssertEqual(item.title, "Robert Sacre competes in dunk contest in Japan")
 			XCTAssertEqual(item.url.absoluteString, "https://streamable.com/4bvun")
 
@@ -25,8 +26,7 @@ class FetchVideoFeedServiceTests: XCTestCase {
 			_ = item.thumbnailUrl.done { _ in thumbnailExpectation.fulfill() }
 			_ = item.videoUrl.done { _ in videoExpectation.fulfill() }
 
-			XCTAssertEqual(item.postedAt.timeIntervalSince1970, 1520194052)
-			XCTAssertEqual(item.author, "TraeRoyalty")
+			XCTAssertEqual(item.details, "TraeRoyalty")
 
 			expectation.fulfill()
 		}

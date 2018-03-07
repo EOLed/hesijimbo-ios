@@ -82,6 +82,7 @@ class FetchVideoFeedService {
 
 	private func toVideoFeedItem(_ dict: [String : AnyObject]) -> VideoFeedItem? {
 		guard let data = dict["data"] as? [String : AnyObject],
+			let id = data["id"] as? String,
 			let title = data["title"] as? String,
 			let link = data["url"] as? String,
 			let url = URL(string: link),
@@ -95,6 +96,7 @@ class FetchVideoFeedService {
 		let video = og.compactMap { $0[.video] }.compactMap { URL(string: $0) }
 
 		return VideoFeedItem(
+			id: id,
 			title: title,
 			url: url,
 			thumbnailUrl: thumbnail,

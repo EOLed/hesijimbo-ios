@@ -7,7 +7,7 @@ extension Pagination {
 			return before
 		case .end(before: let before):
 			return before
-		case .beginning(let after):
+		case .beginning(_):
 			return nil
 		}
 	}
