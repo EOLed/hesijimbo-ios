@@ -14,6 +14,7 @@
 		8C3EC22B204F6EEB004AD309 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC22A204F6EEB004AD309 /* AppCoordinator.swift */; };
 		8C3EC22D204F7197004AD309 /* VideoFeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC22C204F7197004AD309 /* VideoFeedCoordinator.swift */; };
 		8C3EC22F204F7C02004AD309 /* VideoFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EC22E204F7C02004AD309 /* VideoFeed.xib */; };
+		8C3EC23120509933004AD309 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC23020509933004AD309 /* Theme.swift */; };
 		8C40FCC7204A59B800AC3EA4 /* Pagination+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */; };
 		8C40FCCD204BAD0C00AC3EA4 /* OpenGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */; };
 		8C40FCCF204CF2B100AC3EA4 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C40FCCE204CF2B100AC3EA4 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json */; };
@@ -73,6 +74,7 @@
 		8C3EC22A204F6EEB004AD309 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8C3EC22C204F7197004AD309 /* VideoFeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedCoordinator.swift; sourceTree = "<group>"; };
 		8C3EC22E204F7C02004AD309 /* VideoFeed.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoFeed.xib; sourceTree = "<group>"; };
+		8C3EC23020509933004AD309 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pagination+Test.swift"; sourceTree = "<group>"; };
 		8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGraph.framework; path = Carthage/Build/iOS/OpenGraph.framework; sourceTree = "<group>"; };
 		8C40FCCE204CF2B100AC3EA4 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FetchVideoFeedServiceTests_testFetchVideoFeedListing.json; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8C19F973204A00580064AC2F /* RedditModels.swift */,
+				8C3EC23020509933004AD309 /* Theme.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				8C3EC229204F3F9D004AD309 /* VideoFeedController.swift in Sources */,
 				8C19F974204A00580064AC2F /* RedditModels.swift in Sources */,
 				8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */,
+				8C3EC23120509933004AD309 /* Theme.swift in Sources */,
 				8C3EC22D204F7197004AD309 /* VideoFeedCoordinator.swift in Sources */,
 				8C716BCA204E0406000693B4 /* VideoFeedItemView.swift in Sources */,
 			);

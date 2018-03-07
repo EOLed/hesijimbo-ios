@@ -102,7 +102,8 @@ class FetchVideoFeedService {
 			thumbnailUrl: thumbnail,
 			videoUrl: video,
 			postedAt: Date(timeIntervalSince1970: Double(createdAt)),
-			author: author
+			author: author,
+			theme: DarkTheme
 		)
 	}
 

@@ -12,10 +12,10 @@ class VideoFeedItemTests: XCTestCase {
 			thumbnailUrl: Promise(error: NSError(domain: "Test", code: 1, userInfo: nil)),
 			videoUrl: Promise(error: NSError(domain: "Test", code: 2, userInfo: nil)),
 			postedAt: Date(timeIntervalSinceNow: 1000),
-			author: "magnanamos"
+			author: "magnanamos",
+			theme: DarkTheme
 		)
 
 		XCTAssertEqual(item.details, "magnanamos")
 	}
 }
-

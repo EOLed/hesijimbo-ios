@@ -7,6 +7,7 @@ class VideoFeedSectionController: ListBindingSectionController<VideoFeedItem>, L
 		self.video = video
 		super.init()
 		dataSource = self
+		inset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
 	}
 
 	func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {

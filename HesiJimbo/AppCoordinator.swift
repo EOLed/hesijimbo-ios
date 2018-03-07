@@ -7,12 +7,11 @@ class AppCoordinator {
 
 	private var coordinator: VideoFeedCoordinator!
 
-	func start(window: UIWindow) {
-
+	func start(window: UIWindow, theme: Theme) {
 		window.rootViewController = presentingController
 		window.makeKeyAndVisible()
 
-		coordinator = VideoFeedCoordinator(presentingController: presentingController, session: .shared)
+		coordinator = VideoFeedCoordinator(presentingController: presentingController, session: .shared, theme: theme)
 		coordinator.start()
 	}
 }

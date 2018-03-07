@@ -9,6 +9,7 @@ class VideoFeedItem {
 	let thumbnailUrl: Promise<URL>
 	let videoUrl: Promise<URL>
 	let details: String
+	let theme: Theme
 
 	init(
 		id: String,
@@ -17,13 +18,15 @@ class VideoFeedItem {
 		thumbnailUrl: Promise<URL>,
 		videoUrl: Promise<URL>,
 		postedAt: Date,
-		author: String
+		author: String,
+		theme: Theme
 		) {
 		self.id = id
 		self.title = title
 		self.url = url
 		self.thumbnailUrl = thumbnailUrl
 		self.videoUrl = videoUrl
+		self.theme = theme
 
 		self.details = author
 	}

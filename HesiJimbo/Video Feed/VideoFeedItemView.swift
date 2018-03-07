@@ -17,6 +17,11 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 
 		title.text = viewModel.title
 		details.text = viewModel.details
+
+		title.textColor = viewModel.theme.bodyColor
+		details.textColor = viewModel.theme.bodyColor
+
+		backgroundColor = viewModel.theme.viewBackgroundColor
 	}
 
 	override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

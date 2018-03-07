@@ -8,13 +8,15 @@ class VideoFeedController: UIViewController {
 	}()
 
 	private let listing: VideoFeedListing
+	private let theme: Theme
 	private let collectionView = UICollectionView(
 		frame: .zero,
 		collectionViewLayout: UICollectionViewFlowLayout()
 	)
 
-	init(listing: VideoFeedListing) {
+	init(listing: VideoFeedListing, theme: Theme) {
 		self.listing = listing
+		self.theme = theme
 		super.init(nibName: "VideoFeed", bundle: nil)
 	}
 
@@ -29,7 +31,7 @@ class VideoFeedController: UIViewController {
 		adapter.collectionView = collectionView
 		adapter.dataSource = self
 
-		collectionView.backgroundColor = .white
+		collectionView.backgroundColor = theme.backgroundColor
 
 		if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 			flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
