@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,19 +20,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="549" height="491"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-tI-W2j">
-                        <rect key="frame" x="10" y="30" width="529" height="21"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-tI-W2j">
+                        <rect key="frame" x="10" y="30" width="529" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IK7-Ko-gcS" userLabel="Video">
-                        <rect key="frame" x="10" y="52" width="529" height="408.5"/>
+                        <rect key="frame" x="0.0" y="60.5" width="549" height="308.5"/>
                         <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="IK7-Ko-gcS" secondAttribute="height" multiplier="16:9" id="UMw-Va-yLZ"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFC-Zl-fK1">
-                        <rect key="frame" x="10" y="470.5" width="529" height="20.5"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFC-Zl-fK1">
+                        <rect key="frame" x="10" y="379" width="529" height="16"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -40,14 +44,14 @@
             <constraints>
                 <constraint firstItem="hJQ-tI-W2j" firstAttribute="top" secondItem="wX7-wP-zTx" secondAttribute="top" constant="10" id="8no-Vn-EDt"/>
                 <constraint firstItem="LFC-Zl-fK1" firstAttribute="top" secondItem="IK7-Ko-gcS" secondAttribute="bottom" constant="10" id="Hmi-YI-jv3"/>
-                <constraint firstItem="wX7-wP-zTx" firstAttribute="trailing" secondItem="IK7-Ko-gcS" secondAttribute="trailing" constant="10" id="Mvz-2Q-p3Q"/>
-                <constraint firstItem="IK7-Ko-gcS" firstAttribute="leading" secondItem="wX7-wP-zTx" secondAttribute="leading" constant="10" id="Xz7-sH-ftF"/>
+                <constraint firstItem="wX7-wP-zTx" firstAttribute="trailing" secondItem="IK7-Ko-gcS" secondAttribute="trailing" id="Mvz-2Q-p3Q"/>
+                <constraint firstItem="IK7-Ko-gcS" firstAttribute="leading" secondItem="wX7-wP-zTx" secondAttribute="leading" id="Xz7-sH-ftF"/>
+                <constraint firstItem="wX7-wP-zTx" firstAttribute="bottom" secondItem="LFC-Zl-fK1" secondAttribute="bottom" priority="250" constant="10" id="aNh-Gt-iUQ"/>
                 <constraint firstItem="wX7-wP-zTx" firstAttribute="trailing" secondItem="LFC-Zl-fK1" secondAttribute="trailing" constant="10" id="neN-Mc-wi1"/>
-                <constraint firstItem="wX7-wP-zTx" firstAttribute="bottom" secondItem="LFC-Zl-fK1" secondAttribute="bottom" id="pIE-EB-CLT"/>
                 <constraint firstItem="hJQ-tI-W2j" firstAttribute="leading" secondItem="wX7-wP-zTx" secondAttribute="leading" constant="10" id="pWN-Ja-wWi"/>
                 <constraint firstItem="LFC-Zl-fK1" firstAttribute="leading" secondItem="wX7-wP-zTx" secondAttribute="leading" constant="10" id="plJ-Y1-dRm"/>
                 <constraint firstItem="wX7-wP-zTx" firstAttribute="trailing" secondItem="hJQ-tI-W2j" secondAttribute="trailing" constant="10" id="tYm-BX-tug"/>
-                <constraint firstItem="IK7-Ko-gcS" firstAttribute="top" secondItem="hJQ-tI-W2j" secondAttribute="bottom" constant="1" id="tgK-CI-dpG"/>
+                <constraint firstItem="IK7-Ko-gcS" firstAttribute="top" secondItem="hJQ-tI-W2j" secondAttribute="bottom" constant="10" id="tgK-CI-dpG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="wX7-wP-zTx"/>
             <size key="customSize" width="549" height="491"/>

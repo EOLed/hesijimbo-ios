@@ -30,6 +30,10 @@ class VideoFeedController: UIViewController {
 		adapter.dataSource = self
 
 		collectionView.backgroundColor = .white
+
+		if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+			flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+		}
 	}
 
 	override func viewDidLayoutSubviews() {
