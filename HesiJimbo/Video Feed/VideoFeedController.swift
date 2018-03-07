@@ -1,5 +1,6 @@
 import UIKit
 import IGListKit
+import AVKit
 
 class VideoFeedController: UIViewController {
 	private lazy var adapter: ListAdapter = {
@@ -27,6 +28,8 @@ class VideoFeedController: UIViewController {
 		view.addSubview(collectionView)
 		adapter.collectionView = collectionView
 		adapter.dataSource = self
+
+		collectionView.backgroundColor = .white
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -46,7 +49,9 @@ extension VideoFeedController: ListAdapterDataSource {
 
 	func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
 		if let video = object as? VideoFeedItem {
-			return VideoFeedSectionController(video: video)
+			let controller = VideoFeedSectionController(video: video)
+			controller.displayDelegate = self
+			return controller
 		}
 
 		fatalError("No controller found for item")
@@ -56,5 +61,48 @@ extension VideoFeedController: ListAdapterDataSource {
 		let view = UIView()
 		view.backgroundColor = .blue
 		return view
+	}
+}
+
+extension VideoFeedController: ListDisplayDelegate {
+	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
+		guard let videoCell = cell as? VideoFeedItemView else {
+			return
+		}
+
+		guard let videoSectionController = sectionController as? VideoFeedSectionController else {
+			return
+		}
+
+		let videoItem = videoSectionController.video
+
+		_ = videoItem.videoUrl.done { [weak self] url in
+			guard let strongSelf = self else { return }
+
+			print("loading video for \(videoItem.id): \(url.absoluteString)")
+//			videoCell.preview.isHidden = true
+
+			let player = AVPlayer(url: url)
+			let controller = AVPlayerViewController()
+			controller.player = player
+
+			strongSelf.addChildViewController(controller)
+			videoCell.video.addSubview(controller.view)
+			videoCell.video.isHidden = false
+			controller.view.frame = videoCell.video.bounds
+
+		}
+	}
+
+	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
+
+	}
+
+	func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController) {
+
+	}
+
+	func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
+
 	}
 }
