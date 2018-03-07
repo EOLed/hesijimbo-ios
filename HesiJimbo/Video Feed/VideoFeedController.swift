@@ -53,6 +53,8 @@ extension VideoFeedController: ListAdapterDataSource {
 	}
 
 	func emptyView(for listAdapter: ListAdapter) -> UIView? {
-		return nil
+		let view = UIView()
+		view.backgroundColor = .blue
+		return view
 	}
 }

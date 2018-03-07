@@ -13,7 +13,8 @@ class VideoFeedSectionController: ListSectionController {
 
 	override func cellForItem(at index: Int) -> UICollectionViewCell {
 		return collectionContext!.dequeueReusableCell(
-			of: VideoFeedItemView.self,
+			withNibName: "VideoFeedItemView",
+			bundle: nil,
 			for: self,
 			at: index
 		)
