@@ -83,9 +83,6 @@ extension VideoFeedController: ListDisplayDelegate {
 		_ = videoItem.videoUrl.done { [weak self] url in
 			guard let strongSelf = self else { return }
 
-			print("loading video for \(videoItem.id): \(url.absoluteString)")
-//			videoCell.preview.isHidden = true
-
 			let player = AVPlayer(url: url)
 			let controller = AVPlayerViewController()
 			controller.player = player
@@ -94,7 +91,6 @@ extension VideoFeedController: ListDisplayDelegate {
 			videoCell.video.addSubview(controller.view)
 			videoCell.video.isHidden = false
 			controller.view.frame = videoCell.video.bounds
-
 		}
 	}
 
