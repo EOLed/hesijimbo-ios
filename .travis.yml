@@ -5,6 +5,7 @@ env:
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
+  - brew install rswift
 before_script:
   - xcodebuild -project HesiJimbo.xcodeproj -list
   - instruments -s devices
