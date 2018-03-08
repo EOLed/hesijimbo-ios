@@ -5,7 +5,11 @@ import OpenGraph
 
 typealias VideoFeedListing = (items: [VideoFeedItem], pagination: Pagination)
 
-class FetchVideoFeedService {
+protocol FetchVideoFeedService {
+	func perform(pagination: Pagination?) -> Promise<VideoFeedListing>
+}
+
+class FetchVideoFeedServiceImpl: FetchVideoFeedService {
 	private enum Error: Int {
 		case invalidUrl
 		case invalidResponse

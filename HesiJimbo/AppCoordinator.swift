@@ -10,7 +10,7 @@ class AppCoordinator {
 	}
 
 	func start(window: UIWindow, theme: Theme) {
-		let service = FetchVideoFeedService(session: .shared, dateProvider: dateProvider)
+		let service = FetchVideoFeedServiceImpl(session: .shared, dateProvider: dateProvider)
 		let videos = VideoFeedController(viewModel: VideoFeedViewModel(service: service), theme: .dark)
 		videos.tabBarItem = UITabBarItem(title: "Videos", image: R.image.video(), selectedImage: R.image.video())
 		

@@ -22,6 +22,8 @@
 		8C3EC23C2050CE36004AD309 /* MockDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC23B2050CE36004AD309 /* MockDateProvider.swift */; };
 		8C3EC2402050DC17004AD309 /* VideoFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC23F2050DC17004AD309 /* VideoFeedViewModel.swift */; };
 		8C3EC2422050E290004AD309 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EC2412050E28F004AD309 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json */; };
+		8C3EC2442050E652004AD309 /* VideoFeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC2432050E652004AD309 /* VideoFeedViewModelTests.swift */; };
+		8C3EC2462050E93A004AD309 /* MockFetchVideoFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC2452050E93A004AD309 /* MockFetchVideoFeedService.swift */; };
 		8C40FCC7204A59B800AC3EA4 /* Pagination+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */; };
 		8C40FCCD204BAD0C00AC3EA4 /* OpenGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */; };
 		8C716BBD204DF8A2000693B4 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C716BBA204DF8A2000693B4 /* PromiseKit.framework */; };
@@ -88,6 +90,8 @@
 		8C3EC23B2050CE36004AD309 /* MockDateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDateProvider.swift; sourceTree = "<group>"; };
 		8C3EC23F2050DC17004AD309 /* VideoFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedViewModel.swift; sourceTree = "<group>"; };
 		8C3EC2412050E28F004AD309 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FetchVideoFeedServiceTests_testFetchVideoFeedListing.json; sourceTree = "<group>"; };
+		8C3EC2432050E652004AD309 /* VideoFeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedViewModelTests.swift; sourceTree = "<group>"; };
+		8C3EC2452050E93A004AD309 /* MockFetchVideoFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchVideoFeedService.swift; sourceTree = "<group>"; };
 		8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pagination+Test.swift"; sourceTree = "<group>"; };
 		8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGraph.framework; path = Carthage/Build/iOS/OpenGraph.framework; sourceTree = "<group>"; };
 		8C716BBA204DF8A2000693B4 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */,
 				8C3EC23B2050CE36004AD309 /* MockDateProvider.swift */,
+				8C3EC2452050E93A004AD309 /* MockFetchVideoFeedService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				8C40FCC0204A4DFA00AC3EA4 /* Fixtures */,
 				8CB658D42044A57B003AC728 /* FetchVideoFeedServiceTests.swift */,
 				8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */,
+				8C3EC2432050E652004AD309 /* VideoFeedViewModelTests.swift */,
 				8CB658D62044A57B003AC728 /* Info.plist */,
 			);
 			path = HesiJimboTests;
@@ -465,9 +471,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3EC2442050E652004AD309 /* VideoFeedViewModelTests.swift in Sources */,
 				8C3EC23C2050CE36004AD309 /* MockDateProvider.swift in Sources */,
 				8CB658D52044A57B003AC728 /* FetchVideoFeedServiceTests.swift in Sources */,
 				8C40FCC7204A59B800AC3EA4 /* Pagination+Test.swift in Sources */,
+				8C3EC2462050E93A004AD309 /* MockFetchVideoFeedService.swift in Sources */,
 				8C73A1B0204E074C00CACDE3 /* VideoFeedItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,9 @@ class VideoFeedViewModel {
 		isLoading = false
 	}
 
+	@discardableResult
 	func loadMore() -> Promise<Void> {
+		isLoading = true
 		return service.perform(pagination: pagination).done { [weak self] listing in
 			guard let strongSelf = self else { return }
 

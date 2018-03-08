@@ -14,7 +14,7 @@ class VideoFeedCoordinator {
 	}
 
 	func start() {
-		let service = FetchVideoFeedService(session: session, dateProvider: dateProvider)
+		let service = FetchVideoFeedServiceImpl(session: session, dateProvider: dateProvider)
 		let controller = VideoFeedController(
 			viewModel: VideoFeedViewModel(service: service),
 			theme: theme

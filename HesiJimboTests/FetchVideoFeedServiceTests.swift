@@ -6,7 +6,7 @@ import DVR
 class FetchVideoFeedServiceTests: XCTestCase {
 	func testFetchVideoFeedListing() {
 		let session = Session(cassetteName: "FetchVideoFeedServiceTests_testFetchVideoFeedListing")
-		let service = FetchVideoFeedService(
+		let service = FetchVideoFeedServiceImpl(
 			session: session,
 			dateProvider: MockDateProvider(now: Date(timeIntervalSince1970: 1520473890.0))
 		)
