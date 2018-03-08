@@ -17,19 +17,19 @@ class FetchVideoFeedServiceTests: XCTestCase {
 
 		_ = service.perform().done { listing in
 			XCTAssertNil(listing.pagination.before)
-			XCTAssertEqual(listing.pagination.after, "t3_82m3ac")
+			XCTAssertEqual(listing.pagination.after, "t3_82nbk7")
 			XCTAssertEqual(listing.items.count, 12)
 
 			let item = listing.items.first!
-			XCTAssertEqual(item.id, "82tgm2")
-			XCTAssertEqual(item.title, "Mitchell with a DEEP 3")
-			XCTAssertEqual(item.url.absoluteString, "https://streamable.com/lf2i5")
+			XCTAssertEqual(item.id, "82u5ir")
+			XCTAssertEqual(item.title, "Joe Ingles throws a towel in the face of Jazz Announcer Matt Harpring")
+			XCTAssertEqual(item.url.absoluteString, "https://streamable.com/34nod")
 
 			// can't use DVR on these because URLSession is not injectable in OpenGraph
 			_ = item.thumbnailUrl.done { _ in thumbnailExpectation.fulfill() }
 			_ = item.videoUrl.done { _ in videoExpectation.fulfill() }
 
-			XCTAssertEqual(item.details, "1h • Mad_Cowboy")
+			XCTAssertEqual(item.details, "0s • PoohBear075")
 
 			expectation.fulfill()
 		}
