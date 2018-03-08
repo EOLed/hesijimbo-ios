@@ -22,8 +22,30 @@ class FetchVideoFeedService {
 		self.dateProvider = dateProvider
 	}
 
-	func perform() -> Promise<VideoFeedListing> {
-		guard let url = URL(string: baseUrl) else {
+	func perform(pagination: Pagination? = nil) -> Promise<VideoFeedListing> {
+		guard var urlComponents = URLComponents(string: baseUrl), var queryItems = urlComponents.queryItems else {
+			return Promise(error: NSError(
+				domain: Error.domain,
+				code: Error.invalidUrl.rawValue,
+				userInfo: nil
+			))
+
+		}
+
+		if let pagination = pagination {
+			switch pagination {
+			case .beginning(after: let after):
+				queryItems.append(URLQueryItem(name: "after", value: after))
+			case .middle(before: _, after: let after):
+				queryItems.append(URLQueryItem(name: "after", value: after))
+			default:
+				break
+			}
+		}
+
+		urlComponents.queryItems = queryItems
+
+		guard let url = urlComponents.url else {
 			return Promise(error: NSError(
 				domain: Error.domain,
 				code: Error.invalidUrl.rawValue,

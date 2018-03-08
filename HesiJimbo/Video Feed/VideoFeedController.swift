@@ -8,8 +8,12 @@ class VideoFeedController: UIViewController {
 		return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
 	}()
 
+	private var loading = false
+
+
 	private let listingPromise: Promise<VideoFeedListing>
-	private var listing: VideoFeedListing?
+	private var items: [VideoFeedItem] = []
+	private var pagination: Pagination?
 	private let theme: Theme
 	private let collectionView = UICollectionView(
 		frame: .zero,
@@ -27,13 +31,13 @@ class VideoFeedController: UIViewController {
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
-		guard listing == nil else { return }
+		guard items.isEmpty else { return }
 
 		_ = listingPromise.done { [weak self] in
 			guard let strongSelf = self else { return }
 
-			strongSelf.listing = $0
-			strongSelf.adapter.reloadData()
+			strongSelf.items.append(contentsOf: $0.items)
+			strongSelf.adapter.performUpdates(animated: true, completion: nil)
 		}
 	}
 
@@ -43,6 +47,7 @@ class VideoFeedController: UIViewController {
 		view.addSubview(collectionView)
 		adapter.collectionView = collectionView
 		adapter.dataSource = self
+		adapter.scrollViewDelegate = self
 
 		collectionView.backgroundColor = theme.backgroundColor
 
@@ -63,9 +68,7 @@ class VideoFeedController: UIViewController {
 
 extension VideoFeedController: ListAdapterDataSource {
 	func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-		guard let listing = listing else { return [] }
-
-		return listing.items
+		return items
 	}
 
 	func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -119,5 +122,23 @@ extension VideoFeedController: ListDisplayDelegate {
 
 	func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
 
+	}
+}
+
+extension VideoFeedController: UIScrollViewDelegate {
+	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+		let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+		if !loading && distance < 200 {
+			loading = true
+			adapter.performUpdates(animated: true, completion: nil)
+			FetchVideoFeedService(session: .shared, dateProvider: DateProviderImpl()).perform(pagination: pagination).done { [weak self] listing in
+				guard let strongSelf = self else { return }
+
+				strongSelf.loading = false
+				strongSelf.items.append(contentsOf: listing.items)
+				strongSelf.pagination = listing.pagination
+				strongSelf.adapter.performUpdates(animated: true, completion: nil)
+			}
+		}
 	}
 }
