@@ -3,20 +3,22 @@ import UIKit
 class VideoFeedCoordinator {
 	private weak var presentingController: UINavigationController!
 	private let session: URLSession
+	private let dateProvider: DateProvider
 	private let theme: Theme
 
-	init(presentingController: UINavigationController, session: URLSession, theme: Theme) {
+	init(presentingController: UINavigationController, session: URLSession, dateProvider: DateProvider, theme: Theme) {
 		self.presentingController = presentingController
 		self.session = session
+		self.dateProvider = dateProvider
 		self.theme = theme
 	}
 
 	func start() {
-		_ = FetchVideoFeedService(session: session).perform().done { [weak self] listing in
-			guard let strongSelf = self else { return }
+		let controller = VideoFeedController(
+			listingPromise: FetchVideoFeedService(session: session, dateProvider: dateProvider).perform(),
+			theme: theme
+		)
 
-			let controller = VideoFeedController(listing: listing, theme: strongSelf.theme)
-			strongSelf.presentingController.pushViewController(controller, animated: true)
-		}
+		presentingController.pushViewController(controller, animated: true)
 	}
 }

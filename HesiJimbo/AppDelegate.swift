@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		guard let window = self.window else { return false }
 
 		coordinator = AppCoordinator()
-		coordinator.start(window: window, theme: DarkTheme)
+		coordinator.start(window: window, theme: .dark)
 
 		return true
 	}

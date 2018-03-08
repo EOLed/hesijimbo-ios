@@ -14,10 +14,12 @@ class FetchVideoFeedService {
 	}
 
 	private let session: URLSession
-	private let baseUrl = "https://www.reddit.com/r/nba.json"
+	private let dateProvider: DateProvider
+	private let baseUrl = "https://www.reddit.com/r/nba/search.json?q=flair%3A%22Highlights%22&sort=new&restrict_sr=on&t=week"
 
-	init(session: URLSession) {
+	init(session: URLSession, dateProvider: DateProvider) {
 		self.session = session
+		self.dateProvider = dateProvider
 	}
 
 	func perform() -> Promise<VideoFeedListing> {
@@ -69,6 +71,7 @@ class FetchVideoFeedService {
 	private func buildItems(from children: [[String : AnyObject]]) -> [VideoFeedItem] {
 		return children
 			.filter { hasSecureMedia($0) }
+			.filter { isNoteworthy($0) }
 			.flatMap { toVideoFeedItem($0) }
 	}
 
@@ -80,6 +83,14 @@ class FetchVideoFeedService {
 		return !(data["secure_media"] is NSNull)
 	}
 
+	private func isNoteworthy(_ dict: [String : AnyObject]) -> Bool {
+		guard let data = dict["data"] as? [String : AnyObject], let score = data["score"] as? Int else {
+			return false
+		}
+
+		return score >= 50
+	}
+
 	private func toVideoFeedItem(_ dict: [String : AnyObject]) -> VideoFeedItem? {
 		guard let data = dict["data"] as? [String : AnyObject],
 			let id = data["id"] as? String,
@@ -87,7 +98,8 @@ class FetchVideoFeedService {
 			let link = data["url"] as? String,
 			let url = URL(string: link),
 			let createdAt = data["created_utc"] as? Int,
-			let author = data["author"] as? String else {
+			let author = data["author"] as? String,
+			let score = data["score"] as? Int else {
 				return nil
 		}
 
@@ -103,7 +115,9 @@ class FetchVideoFeedService {
 			videoUrl: video,
 			postedAt: Date(timeIntervalSince1970: Double(createdAt)),
 			author: author,
-			theme: DarkTheme
+			score: score,
+			theme: .dark,
+			dateProvider: dateProvider
 		)
 	}
 

@@ -9,6 +9,7 @@ class VideoFeedItem {
 	let thumbnailUrl: Promise<URL>
 	let videoUrl: Promise<URL>
 	let details: String
+	let score: Int
 	let theme: Theme
 
 	init(
@@ -19,16 +20,21 @@ class VideoFeedItem {
 		videoUrl: Promise<URL>,
 		postedAt: Date,
 		author: String,
-		theme: Theme
+		score: Int,
+		theme: Theme,
+		dateProvider: DateProvider
 		) {
 		self.id = id
 		self.title = title
 		self.url = url
 		self.thumbnailUrl = thumbnailUrl
 		self.videoUrl = videoUrl
+		self.score = score
 		self.theme = theme
 
-		self.details = author
+		let prettyNumbers = PrettyNumbers(dateProvider: dateProvider)
+
+		self.details = "\(prettyNumbers.timeAgo(epochUtc: Int(postedAt.timeIntervalSince1970))) • \(author)"
 	}
 }
 

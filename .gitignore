@@ -131,5 +131,6 @@ playground.xcworkspace
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 
+*.generated.swift
 
 # End of https://www.gitignore.io/api/git,swift,macos,carthage,objective-c

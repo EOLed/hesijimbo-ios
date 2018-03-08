@@ -11,11 +11,13 @@ class VideoFeedItemTests: XCTestCase {
 			url: URL(string: "http://example.com")!,
 			thumbnailUrl: Promise(error: NSError(domain: "Test", code: 1, userInfo: nil)),
 			videoUrl: Promise(error: NSError(domain: "Test", code: 2, userInfo: nil)),
-			postedAt: Date(timeIntervalSinceNow: 1000),
+			postedAt: Date(timeIntervalSince1970: 1520273890),
 			author: "magnanamos",
-			theme: DarkTheme
+			score: 100,
+			theme: .dark,
+			dateProvider: MockDateProvider(now: Date(timeIntervalSince1970: 1520473890))
 		)
 
-		XCTAssertEqual(item.details, "magnanamos")
+		XCTAssertEqual(item.details, "2d • magnanamos")
 	}
 }

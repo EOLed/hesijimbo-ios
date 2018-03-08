@@ -1,27 +1,40 @@
 import UIKit
 import IGListKit
 import AVKit
+import PromiseKit
 
 class VideoFeedController: UIViewController {
 	private lazy var adapter: ListAdapter = {
 		return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
 	}()
 
-	private let listing: VideoFeedListing
+	private let listingPromise: Promise<VideoFeedListing>
+	private var listing: VideoFeedListing?
 	private let theme: Theme
 	private let collectionView = UICollectionView(
 		frame: .zero,
 		collectionViewLayout: UICollectionViewFlowLayout()
 	)
 
-	init(listing: VideoFeedListing, theme: Theme) {
-		self.listing = listing
+	init(listingPromise: Promise<VideoFeedListing>, theme: Theme) {
+		self.listingPromise = listingPromise
 		self.theme = theme
 		super.init(nibName: "VideoFeed", bundle: nil)
 	}
 
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) is not supported")
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		guard listing == nil else { return }
+
+		_ = listingPromise.done { [weak self] in
+			guard let strongSelf = self else { return }
+
+			strongSelf.listing = $0
+			strongSelf.adapter.reloadData()
+		}
 	}
 
 	override func viewDidLoad() {
@@ -50,6 +63,8 @@ class VideoFeedController: UIViewController {
 
 extension VideoFeedController: ListAdapterDataSource {
 	func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+		guard let listing = listing else { return [] }
+
 		return listing.items
 	}
 
@@ -64,9 +79,7 @@ extension VideoFeedController: ListAdapterDataSource {
 	}
 
 	func emptyView(for listAdapter: ListAdapter) -> UIView? {
-		let view = UIView()
-		view.backgroundColor = .blue
-		return view
+		return nil
 	}
 }
 
