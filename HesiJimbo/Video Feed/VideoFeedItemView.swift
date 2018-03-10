@@ -22,6 +22,40 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		details.textColor = viewModel.theme.bodyColor
 
 		backgroundColor = viewModel.theme.viewBackgroundColor
+
+		video.isHidden = true
+
+		_ = viewModel.thumbnailUrl.done(on: DispatchQueue.global(qos: .background)) { [weak self] url in
+			guard let data = try? Data(contentsOf: url) else {
+				return
+			}
+
+			DispatchQueue.main.async {
+				self?.preview.image = UIImage(data: data)
+				self?.preview.isHidden = false
+			}
+		}
+	}
+
+	func setUpPlayer(url: URL) {
+		let player = AVPlayer(url: url)
+		playerController = AVPlayerViewController()
+		playerController.player = player
+
+		video.addSubview(playerController.view)
+		video.isHidden = false
+		playerController.view.frame = video.bounds
+	}
+
+	func destroyPlayer() {
+		playerController.view.removeFromSuperview()
+		playerController.player = nil
+		playerController = nil
+	}
+
+	override func prepareForReuse() {
+		video.isHidden = true
+		preview.isHidden = true
 	}
 
 	override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
