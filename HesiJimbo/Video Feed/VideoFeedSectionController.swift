@@ -20,7 +20,24 @@ class VideoFeedSectionController: ListBindingSectionController<VideoFeedItem>, L
 	}
 
 	func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, sizeForViewModel viewModel: Any, at index: Int) -> CGSize {
-		return CGSize(width: collectionContext!.containerSize.width, height: 300)
+		guard let viewModel = viewModel as? VideoFeedItem else {
+			fatalError("Only VideoFeedItem objects are supported")
+		}
+
+		let titleFont = UIFont.preferredFont(forTextStyle: .title3)
+		let detailsFont = UIFont.preferredFont(forTextStyle: .footnote)
+		let spacerWidth: CGFloat = 10.0
+		let width = collectionContext!.containerSize.width - spacerWidth - spacerWidth
+
+		let titleHeight = TextSize.size(viewModel.title, font: titleFont, width: width).height
+		let detailsHeight = TextSize.size(viewModel.details, font: detailsFont, width: width).height
+		let thumbnailHeight: CGFloat = width / (16 / 9.0)
+		let spacerHeight: CGFloat = 10.0
+
+		return CGSize(
+			width: collectionContext!.containerSize.width,
+			height: spacerHeight + titleHeight + spacerHeight + thumbnailHeight + spacerHeight + detailsHeight + spacerHeight + spacerHeight
+		)
 	}
 
 	func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {

@@ -34,6 +34,7 @@
 		8C716BC8204DFDE8000693B4 /* VideoFeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C716BC7204DFDE8000693B4 /* VideoFeedItemView.xib */; };
 		8C716BCA204E0406000693B4 /* VideoFeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C716BC9204E0406000693B4 /* VideoFeedItemView.swift */; };
 		8C73A1B0204E074C00CACDE3 /* VideoFeedItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */; };
+		8C75DBDF2055DA930007E402 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75DBDE2055DA930007E402 /* TextSize.swift */; };
 		8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BC2044A57B003AC728 /* AppDelegate.swift */; };
 		8CB658BF2044A57B003AC728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BE2044A57B003AC728 /* ViewController.swift */; };
 		8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658C32044A57B003AC728 /* HesiJimbo.xcdatamodeld */; };
@@ -102,6 +103,7 @@
 		8C716BC7204DFDE8000693B4 /* VideoFeedItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoFeedItemView.xib; sourceTree = "<group>"; };
 		8C716BC9204E0406000693B4 /* VideoFeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedItemView.swift; sourceTree = "<group>"; };
 		8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedItemTests.swift; sourceTree = "<group>"; };
+		8C75DBDE2055DA930007E402 /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
 		8CB658B92044A57A003AC728 /* HesiJimbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HesiJimbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB658BC2044A57B003AC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB658BE2044A57B003AC728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				8C3EC2372050C77D004AD309 /* PrettyNumbers.swift */,
 				8C19F973204A00580064AC2F /* RedditModels.swift */,
 				8C3EC23020509933004AD309 /* Theme.swift */,
+				8C75DBDE2055DA930007E402 /* TextSize.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				8C3EC23A2050C7DE004AD309 /* DateProvider.swift in Sources */,
 				8C716BC6204DFCFC000693B4 /* VideoFeedSectionController.swift in Sources */,
 				8C3EC22B204F6EEB004AD309 /* AppCoordinator.swift in Sources */,
+				8C75DBDF2055DA930007E402 /* TextSize.swift in Sources */,
 				8C19F96F2049FA750064AC2F /* VideoFeedItem.swift in Sources */,
 				8C19F9712049FE880064AC2F /* FetchVideoFeedService.swift in Sources */,
 				8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */,

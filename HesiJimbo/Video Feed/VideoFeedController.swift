@@ -90,7 +90,9 @@ extension VideoFeedController: ListDisplayDelegate {
 
 		let videoItem = videoSectionController.video
 
-		_ = videoItem.videoUrl.done { videoCell.setUpPlayer(url: $0) }
+		_ = videoItem.videoUrl.done(on: DispatchQueue.global(qos: .background)) {
+			videoCell.setUpPlayer(url: $0, viewModel: videoItem)
+		}
 	}
 
 	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
