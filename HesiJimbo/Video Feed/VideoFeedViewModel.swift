@@ -5,6 +5,7 @@ class VideoFeedViewModel {
 	private(set) var items: [VideoFeedItem] = []
 	private var pagination: Pagination?
 	private let service: FetchVideoFeedService
+	let title = "Videos"
 
 	init(service: FetchVideoFeedService) {
 		self.service = service

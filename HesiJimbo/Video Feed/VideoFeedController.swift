@@ -19,6 +19,8 @@ class VideoFeedController: UIViewController {
 		self.viewModel = viewModel
 		self.theme = theme
 		super.init(nibName: "VideoFeed", bundle: nil)
+
+		title = viewModel.title
 	}
 
 	required init?(coder aDecoder: NSCoder) {

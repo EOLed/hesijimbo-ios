@@ -12,12 +12,15 @@ class AppCoordinator {
 	func start(window: UIWindow, theme: Theme) {
 		let service = FetchVideoFeedServiceImpl(session: .shared, dateProvider: dateProvider)
 		let videos = VideoFeedController(viewModel: VideoFeedViewModel(service: service), theme: .dark)
-		videos.tabBarItem = UITabBarItem(title: "Videos", image: R.image.video(), selectedImage: R.image.video())
-		
-		presentingController = UITabBarController()
+		videos.tabBarItem = UITabBarItem(
+			title: "Videos",
+			image: R.image.video(),
+			selectedImage: R.image.video()
+		)
 
+		presentingController = UITabBarController()
 		presentingController.setViewControllers(
-			[videos],
+			[UINavigationController(rootViewController: videos)],
 			animated: false
 		)
 
@@ -26,6 +29,11 @@ class AppCoordinator {
 		tabBarAppearance.tintColor = theme.accentColor
 
 		UIApplication.shared.statusBarStyle = theme.statusBarStyle
+
+		let navBarAppearance = UINavigationBar.appearance()
+		navBarAppearance.barTintColor = theme.backgroundColor
+		navBarAppearance.tintColor = theme.accentColor
+		navBarAppearance.titleTextAttributes = [.foregroundColor : theme.accentColor]
 
 		window.rootViewController = presentingController
 		window.makeKeyAndVisible()
