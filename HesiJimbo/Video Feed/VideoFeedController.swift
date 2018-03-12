@@ -42,10 +42,6 @@ class VideoFeedController: UIViewController {
 		adapter.scrollViewDelegate = self
 
 		collectionView.backgroundColor = theme.backgroundColor
-
-//		if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//			flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
-//		}
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -80,23 +76,9 @@ extension VideoFeedController: ListAdapterDataSource {
 
 extension VideoFeedController: ListDisplayDelegate {
 	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
-//		guard let videoCell = cell as? VideoFeedItemView else {
-//			return
-//		}
-//
-//		guard let videoSectionController = sectionController as? VideoFeedSectionController else {
-//			return
-//		}
-//
-//		let videoItem = videoSectionController.video
-//
-//		_ = videoItem.videoUrl.done(on: DispatchQueue.global(qos: .background)) {
-//			videoCell.setUpPlayer(url: $0, viewModel: videoItem)
-//		}
 	}
 
 	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
-
 	}
 
 	func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController) {

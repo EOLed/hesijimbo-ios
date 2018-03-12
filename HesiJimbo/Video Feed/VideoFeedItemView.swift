@@ -4,16 +4,14 @@ import AVKit
 
 class VideoFeedItemView: UICollectionViewCell, ListBindable {
 	@IBOutlet private weak var title: UILabel!
-	@IBOutlet weak var video: UIView!
-	@IBOutlet weak var preview: UIImageView!
+	@IBOutlet private weak var video: UIView!
+	@IBOutlet private weak var preview: UIImageView!
 	@IBOutlet private weak var details: UILabel!
 	@IBOutlet private weak var play: UIButton!
 
-	@IBOutlet private var playerController: AVPlayerViewController!
-
+	private var playerController: AVPlayerViewController?
+	private var viewModel: VideoFeedItem?
 	private var currentVideoId: String?
-
-	private var viewModel: VideoFeedItem!
 
 	func bindViewModel(_ viewModel: Any) {
 		guard let viewModel = viewModel as? VideoFeedItem else {
@@ -33,9 +31,8 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 
 		play.titleLabel?.textColor = viewModel.theme.bodyColor
 
-//		video.isHidden = true
+		video.isHidden = true
 		preview.image = nil
-
 
 		_ = viewModel.thumbnailUrl.done(on: DispatchQueue.global(qos: .background)) { [weak self] url in
 			guard let strongSelf = self else {
@@ -63,14 +60,19 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 	}
 
 	@IBAction private func tappedPlayButton(_ sender: UIButton) {
+		guard let viewModel = viewModel else {
+			return
+		}
+
 		play.isHidden = true
-		preview.isHidden = true
 
 		_ = viewModel.videoUrl.done { [weak self] url in
 			guard let strongSelf = self else {
 				return
 			}
-			strongSelf.setUpPlayer(url: url, viewModel: strongSelf.viewModel)
+
+			strongSelf.preview.isHidden = true
+			strongSelf.playVideo(at: url, in: strongSelf.video)
 		}
 	}
 
@@ -93,29 +95,30 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		return .scaleAspectFit
 	}
 
-	func isDisplaying(viewModel: VideoFeedItem) -> Bool {
+	private func isDisplaying(viewModel: VideoFeedItem) -> Bool {
 		return currentVideoId == viewModel.id
 	}
 
-	func setUpPlayer(url: URL, viewModel: VideoFeedItem) {
-//		guard isDisplaying(viewModel: viewModel) else {
-//			print("No longer displaying viewModel: \(viewModel.id)")
-//			return
-//		}
+	private func playVideo(at url: URL, in view: UIView) {
+		let controller = buildPlayer(for: url, on: view.bounds)
+		guard let player = controller.player else {
+			return
+		}
 
-		print("Showing player: \(viewModel.title)")
+		view.addSubview(controller.view)
+		view.isHidden = false
+		player.play()
 
+		playerController = controller
+	}
+
+	private func buildPlayer(for url: URL, on frame: CGRect) -> AVPlayerViewController {
 		let player = AVPlayer(url: url)
 		let controller = AVPlayerViewController()
 		controller.player = player
-		controller.view.frame = video.bounds
+		controller.view.frame = frame
 
-		video.addSubview(controller.view)
-		video.isHidden = false
-
-		playerController = controller
-
-		player.play()
+		return controller
 	}
 
 	func destroyPlayer() {
@@ -126,31 +129,11 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		playerController.view.removeFromSuperview()
 		playerController.player = nil
 		self.playerController = nil
-		currentVideoId = nil
 	}
 
 	override func prepareForReuse() {
-		currentVideoId = nil
 		video.isHidden = true
 		preview.image = nil
 		play.isHidden = false
 	}
-
-//	override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-//		setNeedsLayout()
-//		layoutIfNeeded()
-//
-//		let size = contentView.systemLayoutSizeFitting(
-//			CGSize(
-//				width: layoutAttributes.frame.width,
-//				height: CGFloat.greatestFiniteMagnitude
-//			),
-//			withHorizontalFittingPriority: .required,
-//			verticalFittingPriority: .fittingSizeLevel
-//		)
-//
-//		layoutAttributes.frame.size = size
-//
-//		return layoutAttributes
-//	}
 }
