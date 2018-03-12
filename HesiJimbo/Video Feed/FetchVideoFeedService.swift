@@ -97,6 +97,7 @@ class FetchVideoFeedServiceImpl: FetchVideoFeedService {
 	private func buildItems(from children: [[String : AnyObject]]) -> [VideoFeedItem] {
 		return children
 			.filter { hasSecureMedia($0) }
+			.filter { isFromStreamable($0) }
 			.filter { isNoteworthy($0) }
 			.flatMap { toVideoFeedItem($0) }
 	}
@@ -107,6 +108,14 @@ class FetchVideoFeedServiceImpl: FetchVideoFeedService {
 		}
 
 		return !(data["secure_media"] is NSNull)
+	}
+
+	private func isFromStreamable(_ dict: [String : AnyObject]) -> Bool {
+		guard let data = dict["data"] as? [String : AnyObject] else {
+			return false
+		}
+
+		return (data["domain"] as? String) == "streamable.com"
 	}
 
 	private func isNoteworthy(_ dict: [String : AnyObject]) -> Bool {
