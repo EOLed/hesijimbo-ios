@@ -25,6 +25,8 @@ class AppCoordinator {
 		tabBarAppearance.barTintColor = theme.backgroundColor
 		tabBarAppearance.tintColor = theme.accentColor
 
+		UIApplication.shared.statusBarStyle = theme.statusBarStyle
+
 		window.rootViewController = presentingController
 		window.makeKeyAndVisible()
 	}
