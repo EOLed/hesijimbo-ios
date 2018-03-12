@@ -24,6 +24,21 @@ class VideoFeedSectionController: ListBindingSectionController<VideoFeedItem>, L
 			fatalError("Only VideoFeedItem objects are supported")
 		}
 
+		return CGSize(
+			width: collectionContext!.containerSize.width,
+			height: height(for: viewModel)
+		)
+	}
+
+	func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
+		guard let model = object as? VideoFeedItem else {
+			fatalError("Object not supported")
+		}
+
+		return [model]
+	}
+
+	private func height(for viewModel: VideoFeedItem) -> CGFloat {
 		let titleFont = UIFont.preferredFont(forTextStyle: .title3)
 		let detailsFont = UIFont.preferredFont(forTextStyle: .footnote)
 		let spacerWidth: CGFloat = 10.0
@@ -34,17 +49,6 @@ class VideoFeedSectionController: ListBindingSectionController<VideoFeedItem>, L
 		let thumbnailHeight: CGFloat = width / (16 / 9.0)
 		let spacerHeight: CGFloat = 10.0
 
-		return CGSize(
-			width: collectionContext!.containerSize.width,
-			height: spacerHeight + titleHeight + spacerHeight + thumbnailHeight + spacerHeight + detailsHeight + spacerHeight + spacerHeight
-		)
-	}
-
-	func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
-		guard let model = object as? VideoFeedItem else {
-			fatalError("Object not supported")
-		}
-
-		return [model]
+		return spacerHeight + titleHeight + spacerHeight + thumbnailHeight + spacerHeight + detailsHeight + spacerHeight + spacerHeight
 	}
 }
