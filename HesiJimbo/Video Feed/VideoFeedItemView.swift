@@ -7,16 +7,20 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 	@IBOutlet weak var video: UIView!
 	@IBOutlet weak var preview: UIImageView!
 	@IBOutlet private weak var details: UILabel!
+	@IBOutlet private weak var play: UIButton!
 
 	@IBOutlet private var playerController: AVPlayerViewController!
 
 	private var currentVideoId: String?
+
+	private var viewModel: VideoFeedItem!
 
 	func bindViewModel(_ viewModel: Any) {
 		guard let viewModel = viewModel as? VideoFeedItem else {
 			fatalError("Can only bind to VideoFeedItem")
 		}
 
+		self.viewModel = viewModel
 		currentVideoId = viewModel.id
 
 		title.text = viewModel.title
@@ -26,6 +30,8 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		details.textColor = viewModel.theme.bodyColor
 
 		backgroundColor = viewModel.theme.viewBackgroundColor
+
+		play.titleLabel?.textColor = viewModel.theme.bodyColor
 
 //		video.isHidden = true
 		preview.image = nil
@@ -56,6 +62,18 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		}
 	}
 
+	@IBAction private func tappedPlayButton(_ sender: UIButton) {
+		play.isHidden = true
+		preview.isHidden = true
+
+		_ = viewModel.videoUrl.done { [weak self] url in
+			guard let strongSelf = self else {
+				return
+			}
+			strongSelf.setUpPlayer(url: url, viewModel: strongSelf.viewModel)
+		}
+	}
+
 	private func setPreview(data: Data) {
 		guard let previewImage = UIImage(data: data) else {
 			return
@@ -80,10 +98,10 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 	}
 
 	func setUpPlayer(url: URL, viewModel: VideoFeedItem) {
-		guard isDisplaying(viewModel: viewModel) else {
-			print("No longer displaying viewModel: \(viewModel.id)")
-			return
-		}
+//		guard isDisplaying(viewModel: viewModel) else {
+//			print("No longer displaying viewModel: \(viewModel.id)")
+//			return
+//		}
 
 		print("Showing player: \(viewModel.title)")
 
@@ -96,6 +114,8 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		video.isHidden = false
 
 		playerController = controller
+
+		player.play()
 	}
 
 	func destroyPlayer() {
@@ -109,11 +129,12 @@ class VideoFeedItemView: UICollectionViewCell, ListBindable {
 		currentVideoId = nil
 	}
 
-//	override func prepareForReuse() {
-//		currentVideoId = nil
-//		video.isHidden = true
-//		preview.image = nil
-//	}
+	override func prepareForReuse() {
+		currentVideoId = nil
+		video.isHidden = true
+		preview.image = nil
+		play.isHidden = false
+	}
 
 //	override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
 //		setNeedsLayout()

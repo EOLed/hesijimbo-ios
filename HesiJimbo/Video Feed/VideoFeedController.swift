@@ -66,7 +66,7 @@ extension VideoFeedController: ListAdapterDataSource {
 	func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
 		if let video = object as? VideoFeedItem {
 			let controller = VideoFeedSectionController(video: video)
-//			controller.displayDelegate = self
+			controller.displayDelegate = self
 			return controller
 		}
 
@@ -80,19 +80,19 @@ extension VideoFeedController: ListAdapterDataSource {
 
 extension VideoFeedController: ListDisplayDelegate {
 	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
-		guard let videoCell = cell as? VideoFeedItemView else {
-			return
-		}
-
-		guard let videoSectionController = sectionController as? VideoFeedSectionController else {
-			return
-		}
-
-		let videoItem = videoSectionController.video
-
-		_ = videoItem.videoUrl.done(on: DispatchQueue.global(qos: .background)) {
-			videoCell.setUpPlayer(url: $0, viewModel: videoItem)
-		}
+//		guard let videoCell = cell as? VideoFeedItemView else {
+//			return
+//		}
+//
+//		guard let videoSectionController = sectionController as? VideoFeedSectionController else {
+//			return
+//		}
+//
+//		let videoItem = videoSectionController.video
+//
+//		_ = videoItem.videoUrl.done(on: DispatchQueue.global(qos: .background)) {
+//			videoCell.setUpPlayer(url: $0, viewModel: videoItem)
+//		}
 	}
 
 	func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
@@ -103,7 +103,11 @@ extension VideoFeedController: ListDisplayDelegate {
 	}
 
 	func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
-		(cell as? VideoFeedItemView)?.destroyPlayer()
+		guard let videoCell = cell as? VideoFeedItemView else {
+			return
+		}
+
+		videoCell.destroyPlayer()
 	}
 }
 
