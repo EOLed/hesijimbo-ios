@@ -9,17 +9,12 @@ class AppCoordinator {
 	}
 
 	func start(window: UIWindow, theme: Theme) {
-		let service = FetchVideoFeedServiceImpl(session: .shared, dateProvider: dateProvider)
-		let videos = VideoFeedController(viewModel: VideoFeedViewModel(service: service), theme: .dark)
-		videos.tabBarItem = UITabBarItem(
-			title: "Videos",
-			image: R.image.video(),
-			selectedImage: R.image.video()
-		)
-
 		presentingController = UITabBarController()
 		presentingController.setViewControllers(
-			[UINavigationController(rootViewController: videos)],
+			[
+				buildVideosController(),
+				buildScoresController()
+			],
 			animated: false
 		)
 
@@ -36,5 +31,33 @@ class AppCoordinator {
 
 		window.rootViewController = presentingController
 		window.makeKeyAndVisible()
+	}
+
+	private func buildVideosController() -> UINavigationController {
+		let service = FetchVideoFeedServiceImpl(session: .shared, dateProvider: dateProvider)
+		let videos = VideoFeedController(viewModel: VideoFeedViewModel(service: service), theme: .dark)
+		videos.tabBarItem = UITabBarItem(
+			title: "Videos",
+			image: R.image.tabVideos(),
+			selectedImage: R.image.tabVideos()
+		)
+
+		return UINavigationController(rootViewController: videos)
+	}
+
+	private func buildScoresController() -> UINavigationController {
+		let service = FetchScoresServiceImpl()
+		let scores = ScoresController(
+			viewModel: ScoresViewModel(date: dateProvider.get(), service: service),
+			theme: .dark
+		)
+
+		scores.tabBarItem = UITabBarItem(
+			title: "Scores",
+			image: R.image.tabScores(),
+			selectedImage: R.image.tabScores()
+		)
+
+		return UINavigationController(rootViewController: scores)
 	}
 }

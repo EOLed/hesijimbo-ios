@@ -25,6 +25,12 @@
 		8C40FCC7204A59B800AC3EA4 /* Pagination+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */; };
 		8C40FCCD204BAD0C00AC3EA4 /* OpenGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */; };
 		8C5F7CEE2058537900DF684A /* Score.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5F7CED2058537900DF684A /* Score.xib */; };
+		8C5F7CF02058683F00DF684A /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F7CEF2058683F00DF684A /* ScoreViewModel.swift */; };
+		8C5F7CF220586A1400DF684A /* ScoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F7CF120586A1400DF684A /* ScoresViewModel.swift */; };
+		8C5F7CF420586A4200DF684A /* FetchScoresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F7CF320586A4200DF684A /* FetchScoresService.swift */; };
+		8C5F7CF82058753400DF684A /* ScoresController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F7CF72058753400DF684A /* ScoresController.swift */; };
+		8C5F7CFA205877D200DF684A /* ScoreSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F7CF9205877D200DF684A /* ScoreSectionController.swift */; };
+		8C5F7CFC2058786600DF684A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F7CFB2058786600DF684A /* ScoreView.swift */; };
 		8C716BBD204DF8A2000693B4 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C716BBA204DF8A2000693B4 /* PromiseKit.framework */; };
 		8C716BBF204DF8A2000693B4 /* PMKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C716BBC204DF8A2000693B4 /* PMKFoundation.framework */; };
 		8C716BC2204DF935000693B4 /* DVR.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 8C716BBB204DF8A2000693B4 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -92,6 +98,12 @@
 		8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pagination+Test.swift"; sourceTree = "<group>"; };
 		8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGraph.framework; path = Carthage/Build/iOS/OpenGraph.framework; sourceTree = "<group>"; };
 		8C5F7CED2058537900DF684A /* Score.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Score.xib; sourceTree = "<group>"; };
+		8C5F7CEF2058683F00DF684A /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		8C5F7CF120586A1400DF684A /* ScoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewModel.swift; sourceTree = "<group>"; };
+		8C5F7CF320586A4200DF684A /* FetchScoresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchScoresService.swift; sourceTree = "<group>"; };
+		8C5F7CF72058753400DF684A /* ScoresController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresController.swift; sourceTree = "<group>"; };
+		8C5F7CF9205877D200DF684A /* ScoreSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSectionController.swift; sourceTree = "<group>"; };
+		8C5F7CFB2058786600DF684A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		8C716BBA204DF8A2000693B4 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		8C716BBB204DF8A2000693B4 /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/iOS/DVR.framework; sourceTree = "<group>"; };
 		8C716BBC204DF8A2000693B4 /* PMKFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMKFoundation.framework; path = Carthage/Build/iOS/PMKFoundation.framework; sourceTree = "<group>"; };
@@ -101,6 +113,7 @@
 		8C716BC9204E0406000693B4 /* VideoFeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedItemView.swift; sourceTree = "<group>"; };
 		8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedItemTests.swift; sourceTree = "<group>"; };
 		8C75DBDE2055DA930007E402 /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
+		8C7CDE32205885C400F30FCD /* SwiftSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSVG.framework; path = Carthage/Build/iOS/SwiftSVG.framework; sourceTree = "<group>"; };
 		8CB658B92044A57A003AC728 /* HesiJimbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HesiJimbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB658BC2044A57B003AC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB658C42044A57B003AC728 /* HesiJimbo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HesiJimbo.xcdatamodel; sourceTree = "<group>"; };
@@ -192,7 +205,13 @@
 		8C5F7CEC2058535100DF684A /* Scores */ = {
 			isa = PBXGroup;
 			children = (
+				8C5F7CF320586A4200DF684A /* FetchScoresService.swift */,
 				8C5F7CED2058537900DF684A /* Score.xib */,
+				8C5F7CF72058753400DF684A /* ScoresController.swift */,
+				8C5F7CF9205877D200DF684A /* ScoreSectionController.swift */,
+				8C5F7CF120586A1400DF684A /* ScoresViewModel.swift */,
+				8C5F7CFB2058786600DF684A /* ScoreView.swift */,
+				8C5F7CEF2058683F00DF684A /* ScoreViewModel.swift */,
 			);
 			path = Scores;
 			sourceTree = "<group>";
@@ -200,6 +219,7 @@
 		8CA350FA2044B7E300C7BBC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C7CDE32205885C400F30FCD /* SwiftSVG.framework */,
 				8C3EC2352050C0E6004AD309 /* Rswift.framework */,
 				8C716BC3204DFCB3000693B4 /* IGListKit.framework */,
 				8C716BBB204DF8A2000693B4 /* DVR.framework */,
@@ -454,12 +474,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3EC23A2050C7DE004AD309 /* DateProvider.swift in Sources */,
+				8C5F7CF420586A4200DF684A /* FetchScoresService.swift in Sources */,
 				8C716BC6204DFCFC000693B4 /* VideoFeedSectionController.swift in Sources */,
 				8C3EC22B204F6EEB004AD309 /* AppCoordinator.swift in Sources */,
+				8C5F7CFA205877D200DF684A /* ScoreSectionController.swift in Sources */,
 				8C75DBDF2055DA930007E402 /* TextSize.swift in Sources */,
+				8C5F7CF220586A1400DF684A /* ScoresViewModel.swift in Sources */,
 				8C19F96F2049FA750064AC2F /* VideoFeedItem.swift in Sources */,
 				8C19F9712049FE880064AC2F /* FetchVideoFeedService.swift in Sources */,
 				8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */,
+				8C5F7CF02058683F00DF684A /* ScoreViewModel.swift in Sources */,
+				8C5F7CFC2058786600DF684A /* ScoreView.swift in Sources */,
 				8C3EC2342050BF62004AD309 /* R.generated.swift in Sources */,
 				8C3EC229204F3F9D004AD309 /* VideoFeedController.swift in Sources */,
 				8C19F974204A00580064AC2F /* RedditModels.swift in Sources */,
@@ -467,6 +492,7 @@
 				8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */,
 				8C3EC2382050C77D004AD309 /* PrettyNumbers.swift in Sources */,
 				8C3EC23120509933004AD309 /* Theme.swift in Sources */,
+				8C5F7CF82058753400DF684A /* ScoresController.swift in Sources */,
 				8C716BCA204E0406000693B4 /* VideoFeedItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

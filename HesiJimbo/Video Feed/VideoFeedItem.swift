@@ -40,7 +40,7 @@ class VideoFeedItem {
 
 extension VideoFeedItem: ListDiffable {
 	func diffIdentifier() -> NSObjectProtocol {
-		return id as NSString
+		return id as NSObjectProtocol
 	}
 
 	func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
