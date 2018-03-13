@@ -13,14 +13,25 @@ class VideoFeedViewModel {
 	}
 
 	@discardableResult
+	func reload() -> Promise<Void> {
+		isLoading = true
+		items = []
+		return service.perform(pagination: nil).done { [weak self] listing in
+			self?.loaded(listing: listing)
+		}
+	}
+
+	@discardableResult
 	func loadMore() -> Promise<Void> {
 		isLoading = true
 		return service.perform(pagination: pagination).done { [weak self] listing in
-			guard let strongSelf = self else { return }
-
-			strongSelf.isLoading = false
-			strongSelf.items.append(contentsOf: listing.items)
-			strongSelf.pagination = listing.pagination
+			self?.loaded(listing: listing)
 		}
+	}
+
+	private func loaded(listing: VideoFeedListing) {
+		isLoading = false
+		items.append(contentsOf: listing.items)
+		pagination = listing.pagination
 	}
 }

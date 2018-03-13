@@ -10,13 +10,17 @@ class VideoFeedController: UICollectionViewController {
 
 	private let viewModel: VideoFeedViewModel
 	private let theme: Theme
+	private let refresher: UIRefreshControl
 
 	init(viewModel: VideoFeedViewModel, theme: Theme) {
 		self.viewModel = viewModel
 		self.theme = theme
 
+		refresher = UIRefreshControl()
+
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
 
+		refresher.addTarget(self, action: #selector(reload), for: .valueChanged)
 		title = viewModel.title
 	}
 
@@ -35,16 +39,50 @@ class VideoFeedController: UICollectionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		guard let collectionView = collectionView else {
+			return
+		}
+
+		collectionView.alwaysBounceVertical = true
+		collectionView.addSubview(refresher)
+
 		adapter.collectionView = collectionView
 		adapter.dataSource = self
 		adapter.scrollViewDelegate = self
 
-		collectionView?.backgroundColor = theme.backgroundColor
+		collectionView.backgroundColor = theme.backgroundColor
 	}
 
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		collectionView?.frame = view.bounds
+	}
+
+	override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+		let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+		if !viewModel.isLoading && distance < 200 {
+			loadMore()
+		}
+	}
+
+	@objc private func loadMore() {
+		load(request: viewModel.loadMore())
+	}
+
+	@objc private func reload() {
+		load(request: viewModel.reload())
+	}
+
+	private func load(request: Promise<Void>) {
+		adapter.performUpdates(animated: true, completion: nil)
+		_ = request.done { [weak self] listing in
+			guard let strongSelf = self else {
+				return
+			}
+
+			strongSelf.adapter.performUpdates(animated: false, completion: nil)
+			strongSelf.refresher.endRefreshing()
+		}
 	}
 
 	deinit {
@@ -88,15 +126,5 @@ extension VideoFeedController: ListDisplayDelegate {
 		}
 
 		videoCell.destroyPlayer()
-	}
-
-	override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-		let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
-		if !viewModel.isLoading && distance < 200 {
-			adapter.performUpdates(animated: true, completion: nil)
-			_ = viewModel.loadMore().done { [weak adapter] listing in
-				adapter?.performUpdates(animated: false, completion: nil)
-			}
-		}
 	}
 }
