@@ -1,0 +1,4 @@
+github "PromiseKit/Foundation" ~> 3.0
+github "satoshi-takano/OpenGraph" ~> 1.0
+github "Instagram/IGListKit" ~> 3.0
+github "mac-cain13/R.swift.Library" ~> 4.0

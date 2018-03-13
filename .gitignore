@@ -5,8 +5,7 @@
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+Carthage/Checkouts
 Carthage/Build
 
 ### Git ###
@@ -132,5 +131,6 @@ playground.xcworkspace
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 
+*.generated.swift
 
 # End of https://www.gitignore.io/api/git,swift,macos,carthage,objective-c

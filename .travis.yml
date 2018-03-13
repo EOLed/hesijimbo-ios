@@ -1,0 +1,16 @@
+language: objective-c
+osx_image: xcode9.2
+env:
+  - PLATFORM="ios" SCHEME="HesiJimbo" TARGET="HesiJimboTests" DESTINATION="id=CDE69F0A-D7D0-4CF1-B480-E1AEF653DF52" SDK="iphonesimulator11.2"
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - brew install rswift
+before_script:
+  - xcodebuild -project HesiJimbo.xcodeproj -list
+  - instruments -s devices
+  - carthage update --platform iOS
+script:
+  - set -o pipefail
+  - xcodebuild -project HesiJimbo.xcodeproj -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" test
+
