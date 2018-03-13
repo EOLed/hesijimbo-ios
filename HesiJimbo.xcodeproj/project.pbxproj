@@ -24,6 +24,7 @@
 		8C3EC2462050E93A004AD309 /* MockFetchVideoFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EC2452050E93A004AD309 /* MockFetchVideoFeedService.swift */; };
 		8C40FCC7204A59B800AC3EA4 /* Pagination+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */; };
 		8C40FCCD204BAD0C00AC3EA4 /* OpenGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */; };
+		8C5F7CEE2058537900DF684A /* Score.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5F7CED2058537900DF684A /* Score.xib */; };
 		8C716BBD204DF8A2000693B4 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C716BBA204DF8A2000693B4 /* PromiseKit.framework */; };
 		8C716BBF204DF8A2000693B4 /* PMKFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C716BBC204DF8A2000693B4 /* PMKFoundation.framework */; };
 		8C716BC2204DF935000693B4 /* DVR.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 8C716BBB204DF8A2000693B4 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -90,6 +91,7 @@
 		8C3EC2452050E93A004AD309 /* MockFetchVideoFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchVideoFeedService.swift; sourceTree = "<group>"; };
 		8C40FCC6204A59B800AC3EA4 /* Pagination+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pagination+Test.swift"; sourceTree = "<group>"; };
 		8C40FCCC204BAD0C00AC3EA4 /* OpenGraph.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGraph.framework; path = Carthage/Build/iOS/OpenGraph.framework; sourceTree = "<group>"; };
+		8C5F7CED2058537900DF684A /* Score.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Score.xib; sourceTree = "<group>"; };
 		8C716BBA204DF8A2000693B4 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		8C716BBB204DF8A2000693B4 /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/iOS/DVR.framework; sourceTree = "<group>"; };
 		8C716BBC204DF8A2000693B4 /* PMKFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMKFoundation.framework; path = Carthage/Build/iOS/PMKFoundation.framework; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8C5F7CEC2058535100DF684A /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				8C5F7CED2058537900DF684A /* Score.xib */,
+			);
+			path = Scores;
+			sourceTree = "<group>";
+		};
 		8CA350FA2044B7E300C7BBC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				8C19F972204A003D0064AC2F /* Library */,
+				8C5F7CEC2058535100DF684A /* Scores */,
 				8C19F96D2049FA2E0064AC2F /* Video Feed */,
 				8C3EC22A204F6EEB004AD309 /* AppCoordinator.swift */,
 				8CB658BC2044A57B003AC728 /* AppDelegate.swift */,
@@ -374,6 +385,7 @@
 			files = (
 				8CB658CA2044A57B003AC728 /* LaunchScreen.storyboard in Resources */,
 				8CB658C72044A57B003AC728 /* Assets.xcassets in Resources */,
+				8C5F7CEE2058537900DF684A /* Score.xib in Resources */,
 				8C716BC8204DFDE8000693B4 /* VideoFeedItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
