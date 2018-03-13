@@ -3,22 +3,19 @@ import IGListKit
 import AVKit
 import PromiseKit
 
-class VideoFeedController: UIViewController {
+class VideoFeedController: UICollectionViewController {
 	private lazy var adapter: ListAdapter = {
 		return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
 	}()
 
 	private let viewModel: VideoFeedViewModel
 	private let theme: Theme
-	private let collectionView = UICollectionView(
-		frame: .zero,
-		collectionViewLayout: UICollectionViewFlowLayout()
-	)
 
 	init(viewModel: VideoFeedViewModel, theme: Theme) {
 		self.viewModel = viewModel
 		self.theme = theme
-		super.init(nibName: "VideoFeed", bundle: nil)
+
+		super.init(collectionViewLayout: UICollectionViewFlowLayout())
 
 		title = viewModel.title
 	}
@@ -38,17 +35,16 @@ class VideoFeedController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		view.addSubview(collectionView)
 		adapter.collectionView = collectionView
 		adapter.dataSource = self
 		adapter.scrollViewDelegate = self
 
-		collectionView.backgroundColor = theme.backgroundColor
+		collectionView?.backgroundColor = theme.backgroundColor
 	}
 
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-		collectionView.frame = view.bounds
+		collectionView?.frame = view.bounds
 	}
 
 	deinit {
@@ -93,10 +89,8 @@ extension VideoFeedController: ListDisplayDelegate {
 
 		videoCell.destroyPlayer()
 	}
-}
 
-extension VideoFeedController: UIScrollViewDelegate {
-	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+	override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 		let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
 		if !viewModel.isLoading && distance < 200 {
 			adapter.performUpdates(animated: true, completion: nil)
