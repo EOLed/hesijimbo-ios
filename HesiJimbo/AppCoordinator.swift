@@ -2,7 +2,6 @@ import UIKit
 
 class AppCoordinator {
 	private var presentingController: UITabBarController!
-	private var coordinator: VideoFeedCoordinator!
 	private let dateProvider: DateProvider
 
 	init(dateProvider: DateProvider = DateProviderImpl()) {
