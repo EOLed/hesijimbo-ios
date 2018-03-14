@@ -6,7 +6,10 @@ import DVR
 class FetchScoresServiceTests: XCTestCase {
 	func testFetchScores() {
 		let session = Session(cassetteName: "FetchScoresServiceTests_testFetchScores")
-		let service = FetchScoresServiceImpl(session: session)
+		let service = FetchScoresServiceImpl(
+			session: session,
+			dateProvider: MockDateProvider(now: Date(timeIntervalSince1970: 1520913800))
+		)
 
 		let expectation = XCTestExpectation()
 		_ = service.perform().done { scores in

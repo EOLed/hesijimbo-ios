@@ -14,13 +14,18 @@ class FetchScoresServiceImpl: FetchScoresService {
 	}
 
 	private let session: URLSession
+	private let dateProvider: DateProvider
 
-	init(session: URLSession) {
+	init(session: URLSession, dateProvider: DateProvider) {
 		self.session = session
+		self.dateProvider = dateProvider
 	}
 
 	private func scoreboardUrl(for date: Date) -> URL {
-		guard let url = URL(string: "https://data.nba.net/prod/v2/20180313/scoreboard.json") else {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyyMMdd"
+
+		guard let url = URL(string: "https://data.nba.net/prod/v2/\(formatter.string(from: date))/scoreboard.json") else {
 			fatalError("Could not build scoreboard url")
 		}
 
@@ -28,7 +33,7 @@ class FetchScoresServiceImpl: FetchScoresService {
 	}
 
 	func perform() -> Promise<[ScoreViewModel]> {
-		return session.dataTask(.promise, with: URLRequest(url: scoreboardUrl(for: Date())))
+		return session.dataTask(.promise, with: URLRequest(url: scoreboardUrl(for: dateProvider.get())))
 			.then { self.toDictionary($0.data) }
 			.then { self.toViewModels($0) }
 	}

@@ -48,7 +48,7 @@ class AppCoordinator {
 	}
 
 	private func buildScoresController(session: URLSession) -> UINavigationController {
-		let service = FetchScoresServiceImpl(session: session)
+		let service = FetchScoresServiceImpl(session: session, dateProvider: dateProvider)
 		let scores = ScoresController(
 			viewModel: ScoresViewModel(date: dateProvider.get(), service: service),
 			theme: .dark
