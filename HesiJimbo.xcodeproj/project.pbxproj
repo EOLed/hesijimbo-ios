@@ -40,6 +40,8 @@
 		8C716BCA204E0406000693B4 /* VideoFeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C716BC9204E0406000693B4 /* VideoFeedItemView.swift */; };
 		8C73A1B0204E074C00CACDE3 /* VideoFeedItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */; };
 		8C75DBDF2055DA930007E402 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75DBDE2055DA930007E402 /* TextSize.swift */; };
+		8C7CDE362058BEC600F30FCD /* NBAModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CDE352058BEC600F30FCD /* NBAModels.swift */; };
+		8C7CDE382058C54700F30FCD /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CDE372058C54700F30FCD /* TeamTest.swift */; };
 		8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BC2044A57B003AC728 /* AppDelegate.swift */; };
 		8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658C32044A57B003AC728 /* HesiJimbo.xcdatamodeld */; };
 		8CB658C72044A57B003AC728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB658C62044A57B003AC728 /* Assets.xcassets */; };
@@ -114,6 +116,8 @@
 		8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedItemTests.swift; sourceTree = "<group>"; };
 		8C75DBDE2055DA930007E402 /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
 		8C7CDE32205885C400F30FCD /* SwiftSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSVG.framework; path = Carthage/Build/iOS/SwiftSVG.framework; sourceTree = "<group>"; };
+		8C7CDE352058BEC600F30FCD /* NBAModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAModels.swift; sourceTree = "<group>"; };
+		8C7CDE372058C54700F30FCD /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		8CB658B92044A57A003AC728 /* HesiJimbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HesiJimbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB658BC2044A57B003AC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB658C42044A57B003AC728 /* HesiJimbo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HesiJimbo.xcdatamodel; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				8C19F973204A00580064AC2F /* RedditModels.swift */,
 				8C75DBDE2055DA930007E402 /* TextSize.swift */,
 				8C3EC23020509933004AD309 /* Theme.swift */,
+				8C7CDE352058BEC600F30FCD /* NBAModels.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				8C73A1AF204E074C00CACDE3 /* VideoFeedItemTests.swift */,
 				8C3EC2432050E652004AD309 /* VideoFeedViewModelTests.swift */,
 				8CB658D62044A57B003AC728 /* Info.plist */,
+				8C7CDE372058C54700F30FCD /* TeamTest.swift */,
 			);
 			path = HesiJimboTests;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				8C19F974204A00580064AC2F /* RedditModels.swift in Sources */,
 				8C3EC2402050DC17004AD309 /* VideoFeedViewModel.swift in Sources */,
 				8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */,
+				8C7CDE362058BEC600F30FCD /* NBAModels.swift in Sources */,
 				8C3EC2382050C77D004AD309 /* PrettyNumbers.swift in Sources */,
 				8C3EC23120509933004AD309 /* Theme.swift in Sources */,
 				8C5F7CF82058753400DF684A /* ScoresController.swift in Sources */,
@@ -505,6 +512,7 @@
 				8C3EC23C2050CE36004AD309 /* MockDateProvider.swift in Sources */,
 				8CB658D52044A57B003AC728 /* FetchVideoFeedServiceTests.swift in Sources */,
 				8C40FCC7204A59B800AC3EA4 /* Pagination+Test.swift in Sources */,
+				8C7CDE382058C54700F30FCD /* TeamTest.swift in Sources */,
 				8C3EC2462050E93A004AD309 /* MockFetchVideoFeedService.swift in Sources */,
 				8C73A1B0204E074C00CACDE3 /* VideoFeedItemTests.swift in Sources */,
 			);
