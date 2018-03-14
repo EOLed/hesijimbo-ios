@@ -29,20 +29,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Notes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F7-KV-iGr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Notes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F7-KV-iGr">
                     <rect key="frame" x="10" y="70" width="348" height="16"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tky-MX-Tlq">
-                    <rect key="frame" x="227" y="10" width="21" height="21"/>
+                    <rect key="frame" x="247" y="10" width="21" height="21"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-Xh-aw4">
-                    <rect key="frame" x="225" y="39" width="23" height="21"/>
+                    <rect key="frame" x="245" y="39" width="23" height="21"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                 <constraint firstItem="dMa-EJ-Kvz" firstAttribute="top" secondItem="PYA-52-ul0" secondAttribute="bottom" constant="8" id="oqi-Jf-eVn"/>
                 <constraint firstItem="PYA-52-ul0" firstAttribute="leading" secondItem="wPM-dr-dCS" secondAttribute="leading" constant="10" id="sTz-2w-8GH"/>
                 <constraint firstItem="PI9-8q-XG6" firstAttribute="leading" secondItem="kw9-bV-hv5" secondAttribute="leading" id="vHk-9S-ovy"/>
-                <constraint firstItem="wPM-dr-dCS" firstAttribute="trailing" secondItem="tky-MX-Tlq" secondAttribute="trailing" constant="120" id="vp8-3F-faj"/>
+                <constraint firstItem="wPM-dr-dCS" firstAttribute="trailing" secondItem="tky-MX-Tlq" secondAttribute="trailing" constant="100" id="vp8-3F-faj"/>
                 <constraint firstItem="dMa-EJ-Kvz" firstAttribute="leading" secondItem="PYA-52-ul0" secondAttribute="leading" id="w3t-iQ-zxs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="wPM-dr-dCS"/>

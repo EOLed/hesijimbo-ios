@@ -77,13 +77,13 @@ class FetchScoresServiceImpl: FetchScoresService {
 
 		let homeViewModel = ScoreViewModel.Team(
 			name: home.city,
-			logo: logo(from: "https://cdn.nba.net/assets/logos/teams/secondary/web/\(home.triCode).png"),
+			logo: "https://cdn.nba.net/assets/logos/teams/secondary/web/\(home.triCode).png",
 			score: homeScore
 		)
 
 		let awayViewModel = ScoreViewModel.Team(
 			name: away.city,
-			logo: logo(from: "https://cdn.nba.net/assets/logos/teams/secondary/web/\(away.triCode).png"),
+			logo: "https://cdn.nba.net/assets/logos/teams/secondary/web/\(away.triCode).png",
 			score: awayScore
 		)
 
@@ -93,18 +93,8 @@ class FetchScoresServiceImpl: FetchScoresService {
 			away: awayViewModel,
 			status: status == 3 ? "Final" : "",
 			notes: notes,
+			service: FetchTeamLogoServiceImpl(session: session),
 			theme: .dark
 		)
-	}
-
-	private func logo(from url: String) -> Promise<UIImage> {
-		return session.dataTask(.promise, with: URLRequest(url: URL(string: url)!))
-			.then { (data, response) -> Promise<UIImage> in
-				guard let image = UIImage(data: data) else {
-					return Promise<UIImage>(error: NSError(domain: "test", code: 1, userInfo: nil))
-				}
-
-				return Promise<UIImage>.value(image)
-		}
 	}
 }

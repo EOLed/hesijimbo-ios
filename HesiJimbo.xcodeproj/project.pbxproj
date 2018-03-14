@@ -43,6 +43,9 @@
 		8C7CDE362058BEC600F30FCD /* NBAModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CDE352058BEC600F30FCD /* NBAModels.swift */; };
 		8C7CDE382058C54700F30FCD /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CDE372058C54700F30FCD /* TeamTest.swift */; };
 		8C7CDE3A2058CD7800F30FCD /* FetchScoresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CDE392058CD7800F30FCD /* FetchScoresService.swift */; };
+		8C902ECD2058E21E006F8678 /* SystemCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C902ECC2058E21E006F8678 /* SystemCalls.swift */; };
+		8C902ECF2058E4E5006F8678 /* FetchTeamLogoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C902ECE2058E4E5006F8678 /* FetchTeamLogoService.swift */; };
+		8C902ED12058E753006F8678 /* FetchScoresServiceTests_testFetchScores.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C902ED02058E753006F8678 /* FetchScoresServiceTests_testFetchScores.json */; };
 		8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658BC2044A57B003AC728 /* AppDelegate.swift */; };
 		8CB658C52044A57B003AC728 /* HesiJimbo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CB658C32044A57B003AC728 /* HesiJimbo.xcdatamodeld */; };
 		8CB658C72044A57B003AC728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB658C62044A57B003AC728 /* Assets.xcassets */; };
@@ -120,6 +123,9 @@
 		8C7CDE352058BEC600F30FCD /* NBAModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAModels.swift; sourceTree = "<group>"; };
 		8C7CDE372058C54700F30FCD /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		8C7CDE392058CD7800F30FCD /* FetchScoresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchScoresService.swift; sourceTree = "<group>"; };
+		8C902ECC2058E21E006F8678 /* SystemCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCalls.swift; sourceTree = "<group>"; };
+		8C902ECE2058E4E5006F8678 /* FetchTeamLogoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTeamLogoService.swift; sourceTree = "<group>"; };
+		8C902ED02058E753006F8678 /* FetchScoresServiceTests_testFetchScores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FetchScoresServiceTests_testFetchScores.json; sourceTree = "<group>"; };
 		8CB658B92044A57A003AC728 /* HesiJimbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HesiJimbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB658BC2044A57B003AC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB658C42044A57B003AC728 /* HesiJimbo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HesiJimbo.xcdatamodel; sourceTree = "<group>"; };
@@ -182,11 +188,12 @@
 			isa = PBXGroup;
 			children = (
 				8C3EC2392050C7DE004AD309 /* DateProvider.swift */,
+				8C7CDE352058BEC600F30FCD /* NBAModels.swift */,
 				8C3EC2372050C77D004AD309 /* PrettyNumbers.swift */,
 				8C19F973204A00580064AC2F /* RedditModels.swift */,
+				8C902ECC2058E21E006F8678 /* SystemCalls.swift */,
 				8C75DBDE2055DA930007E402 /* TextSize.swift */,
 				8C3EC23020509933004AD309 /* Theme.swift */,
-				8C7CDE352058BEC600F30FCD /* NBAModels.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 		8C40FCC0204A4DFA00AC3EA4 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				8C902ED02058E753006F8678 /* FetchScoresServiceTests_testFetchScores.json */,
 				8C3EC2412050E28F004AD309 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json */,
 			);
 			path = Fixtures;
@@ -213,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5F7CF320586A4200DF684A /* FetchScoresService.swift */,
+				8C902ECE2058E4E5006F8678 /* FetchTeamLogoService.swift */,
 				8C5F7CED2058537900DF684A /* Score.xib */,
 				8C5F7CF72058753400DF684A /* ScoresController.swift */,
 				8C5F7CF9205877D200DF684A /* ScoreSectionController.swift */,
@@ -424,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3EC2422050E290004AD309 /* FetchVideoFeedServiceTests_testFetchVideoFeedListing.json in Resources */,
+				8C902ED12058E753006F8678 /* FetchScoresServiceTests_testFetchScores.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C902ECF2058E4E5006F8678 /* FetchTeamLogoService.swift in Sources */,
 				8C3EC23A2050C7DE004AD309 /* DateProvider.swift in Sources */,
 				8C5F7CF420586A4200DF684A /* FetchScoresService.swift in Sources */,
 				8C716BC6204DFCFC000693B4 /* VideoFeedSectionController.swift in Sources */,
@@ -494,6 +505,7 @@
 				8CB658BD2044A57B003AC728 /* AppDelegate.swift in Sources */,
 				8C5F7CF02058683F00DF684A /* ScoreViewModel.swift in Sources */,
 				8C5F7CFC2058786600DF684A /* ScoreView.swift in Sources */,
+				8C902ECD2058E21E006F8678 /* SystemCalls.swift in Sources */,
 				8C3EC2342050BF62004AD309 /* R.generated.swift in Sources */,
 				8C3EC229204F3F9D004AD309 /* VideoFeedController.swift in Sources */,
 				8C19F974204A00580064AC2F /* RedditModels.swift in Sources */,

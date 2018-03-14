@@ -7,6 +7,7 @@ class ScoreSectionController: ListBindingSectionController<ScoreViewModel>, List
 		self.score = score
 		super.init()
 		dataSource = self
+		inset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
 	}
 
 	func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {

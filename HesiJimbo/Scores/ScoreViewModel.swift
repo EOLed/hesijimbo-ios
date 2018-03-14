@@ -5,7 +5,7 @@ import PromiseKit
 class ScoreViewModel {
 	struct Team {
 		let name: String
-		let logo: Promise<UIImage>
+		let logo: String
 		let score: String
 	}
 
@@ -16,13 +16,24 @@ class ScoreViewModel {
 	let notes: String
 	let theme: Theme
 
-	init(id: String, home: Team, away: Team, status: String, notes: String, theme: Theme) {
+	private let service: FetchTeamLogoService
+
+	init(id: String, home: Team, away: Team, status: String, notes: String, service: FetchTeamLogoService, theme: Theme) {
 		self.id = id
 		self.home = home
 		self.away = away
 		self.status = status
 		self.notes = notes
+		self.service = service
 		self.theme = theme
+	}
+
+	func homeLogo() -> Promise<UIImage> {
+		return service.perform(url: home.logo)
+	}
+
+	func awayLogo() -> Promise<UIImage> {
+		return service.perform(url: away.logo)
 	}
 }
 

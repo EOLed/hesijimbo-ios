@@ -23,7 +23,8 @@ class ScoreView: UICollectionViewCell, ListBindable {
 
 	func bindViewModel(_ viewModel: Any) {
 		guard let viewModel = viewModel as? ScoreViewModel else {
-			fatalError("Can only bind to ScoreViewModel")
+			nonFatalError("Can only bind to ScoreViewModel")
+			return
 		}
 
 		state = .bound(score: viewModel)
@@ -45,8 +46,8 @@ class ScoreView: UICollectionViewCell, ListBindable {
 		status.text = viewModel.status
 		notes.text = viewModel.notes
 
-		load(logo: viewModel.home.logo, on: homeLogo)
-		load(logo: viewModel.away.logo, on: awayLogo)
+		load(logo: viewModel.homeLogo(), on: homeLogo)
+		load(logo: viewModel.awayLogo(), on: awayLogo)
 	}
 	
 
