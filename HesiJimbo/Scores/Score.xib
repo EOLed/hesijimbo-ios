@@ -14,7 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cIh-KR-UZC" customClass="ScoreView" customModule="HesiJimbo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="368" height="145"/>
+            <rect key="frame" x="0.0" y="0.0" width="368" height="363"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kw9-bV-hv5">
@@ -30,20 +30,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Notes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F7-KV-iGr">
-                    <rect key="frame" x="16" y="70" width="342" height="16"/>
+                    <rect key="frame" x="10" y="70" width="348" height="16"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="A77-G8-Rht" userLabel="Home Logo">
-                    <rect key="frame" x="16" y="10" width="21" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="A77-G8-Rht" secondAttribute="height" multiplier="1:1" id="4cS-96-5Lr"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qio-E2-CLU" userLabel="Away Logo">
-                    <rect key="frame" x="16" y="39" width="21" height="21"/>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tky-MX-Tlq">
                     <rect key="frame" x="227" y="10" width="21" height="21"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -62,45 +53,57 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PYA-52-ul0" userLabel="homeLogo">
+                    <rect key="frame" x="10" y="10" width="21" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="PYA-52-ul0" secondAttribute="height" multiplier="1:1" id="My6-Bu-Hje"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMa-EJ-Kvz">
+                    <rect key="frame" x="10" y="39" width="21" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dMa-EJ-Kvz" secondAttribute="height" multiplier="1:1" id="mra-Iz-noa"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="6F7-KV-iGr" firstAttribute="trailing" secondItem="Bfo-zZ-xXY" secondAttribute="trailing" id="1Wo-zG-OxW"/>
-                <constraint firstItem="A77-G8-Rht" firstAttribute="leading" secondItem="wPM-dr-dCS" secondAttribute="leading" constant="16" id="5FZ-pY-Gq8"/>
+                <constraint firstItem="6F7-KV-iGr" firstAttribute="leading" secondItem="PYA-52-ul0" secondAttribute="leading" id="7Hn-l2-YxT"/>
                 <constraint firstItem="tky-MX-Tlq" firstAttribute="height" secondItem="kw9-bV-hv5" secondAttribute="height" id="9NP-EX-cpy"/>
-                <constraint firstItem="PI9-8q-XG6" firstAttribute="top" secondItem="qio-E2-CLU" secondAttribute="top" id="BRa-OO-bbe"/>
-                <constraint firstItem="kw9-bV-hv5" firstAttribute="top" secondItem="A77-G8-Rht" secondAttribute="top" id="Dxk-28-NjH"/>
                 <constraint firstItem="kNA-Xh-aw4" firstAttribute="trailing" secondItem="tky-MX-Tlq" secondAttribute="trailing" id="Egp-g1-2cm"/>
-                <constraint firstItem="kNA-Xh-aw4" firstAttribute="top" secondItem="qio-E2-CLU" secondAttribute="top" id="HIV-1r-rJy"/>
-                <constraint firstItem="qio-E2-CLU" firstAttribute="top" secondItem="A77-G8-Rht" secondAttribute="bottom" constant="8" id="NLp-jk-6UU"/>
+                <constraint firstItem="kNA-Xh-aw4" firstAttribute="height" secondItem="PI9-8q-XG6" secondAttribute="height" id="Ntx-kw-h7W"/>
                 <constraint firstItem="wPM-dr-dCS" firstAttribute="trailing" secondItem="Bfo-zZ-xXY" secondAttribute="trailing" constant="10" id="OQb-fs-5oi"/>
+                <constraint firstItem="kw9-bV-hv5" firstAttribute="leading" secondItem="PYA-52-ul0" secondAttribute="trailing" constant="14" id="OY3-jH-a4c"/>
+                <constraint firstItem="dMa-EJ-Kvz" firstAttribute="width" secondItem="PYA-52-ul0" secondAttribute="width" id="QCH-iE-mOR"/>
                 <constraint firstItem="Bfo-zZ-xXY" firstAttribute="height" secondItem="kw9-bV-hv5" secondAttribute="height" id="RWA-JK-eMo"/>
-                <constraint firstItem="qio-E2-CLU" firstAttribute="height" secondItem="A77-G8-Rht" secondAttribute="height" id="Sjj-GD-tvr"/>
-                <constraint firstItem="6F7-KV-iGr" firstAttribute="top" secondItem="qio-E2-CLU" secondAttribute="bottom" constant="10" id="W4J-Cj-Nes"/>
-                <constraint firstItem="6F7-KV-iGr" firstAttribute="leading" secondItem="qio-E2-CLU" secondAttribute="leading" id="YQN-Sx-gLE"/>
+                <constraint firstItem="6F7-KV-iGr" firstAttribute="top" secondItem="PI9-8q-XG6" secondAttribute="bottom" constant="10" id="XVD-AS-NGT"/>
+                <constraint firstItem="PI9-8q-XG6" firstAttribute="height" secondItem="kw9-bV-hv5" secondAttribute="height" id="YGX-RD-eTy"/>
+                <constraint firstItem="PYA-52-ul0" firstAttribute="top" secondItem="kw9-bV-hv5" secondAttribute="top" id="cQS-j4-doz"/>
                 <constraint firstItem="kw9-bV-hv5" firstAttribute="top" secondItem="wPM-dr-dCS" secondAttribute="top" constant="10" id="dHY-y1-dLp"/>
                 <constraint firstItem="wPM-dr-dCS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6F7-KV-iGr" secondAttribute="bottom" constant="10" id="eBb-bH-wwW"/>
-                <constraint firstItem="kw9-bV-hv5" firstAttribute="leading" secondItem="A77-G8-Rht" secondAttribute="trailing" constant="8" symbolic="YES" id="g6k-l3-lIe"/>
-                <constraint firstItem="qio-E2-CLU" firstAttribute="width" secondItem="A77-G8-Rht" secondAttribute="width" id="iqL-Cc-fdP"/>
+                <constraint firstItem="kNA-Xh-aw4" firstAttribute="top" secondItem="dMa-EJ-Kvz" secondAttribute="top" id="eUg-3B-aSh"/>
+                <constraint firstItem="PYA-52-ul0" firstAttribute="height" secondItem="kw9-bV-hv5" secondAttribute="height" id="far-Nt-Qai"/>
+                <constraint firstItem="dMa-EJ-Kvz" firstAttribute="top" secondItem="PI9-8q-XG6" secondAttribute="top" id="hP1-Yx-kAZ"/>
                 <constraint firstItem="tky-MX-Tlq" firstAttribute="top" secondItem="kw9-bV-hv5" secondAttribute="top" id="jVE-vT-J7J"/>
                 <constraint firstItem="Bfo-zZ-xXY" firstAttribute="top" secondItem="kw9-bV-hv5" secondAttribute="top" id="lKU-CM-sAc"/>
-                <constraint firstItem="kNA-Xh-aw4" firstAttribute="height" secondItem="PI9-8q-XG6" secondAttribute="height" id="osh-BI-KdD"/>
-                <constraint firstItem="qio-E2-CLU" firstAttribute="leading" secondItem="A77-G8-Rht" secondAttribute="leading" id="uxB-kt-SHb"/>
+                <constraint firstItem="dMa-EJ-Kvz" firstAttribute="top" secondItem="PYA-52-ul0" secondAttribute="bottom" constant="8" id="oqi-Jf-eVn"/>
+                <constraint firstItem="PYA-52-ul0" firstAttribute="leading" secondItem="wPM-dr-dCS" secondAttribute="leading" constant="10" id="sTz-2w-8GH"/>
                 <constraint firstItem="PI9-8q-XG6" firstAttribute="leading" secondItem="kw9-bV-hv5" secondAttribute="leading" id="vHk-9S-ovy"/>
                 <constraint firstItem="wPM-dr-dCS" firstAttribute="trailing" secondItem="tky-MX-Tlq" secondAttribute="trailing" constant="120" id="vp8-3F-faj"/>
-                <constraint firstItem="A77-G8-Rht" firstAttribute="height" secondItem="kw9-bV-hv5" secondAttribute="height" id="zfl-Sb-0Ka"/>
+                <constraint firstItem="dMa-EJ-Kvz" firstAttribute="leading" secondItem="PYA-52-ul0" secondAttribute="leading" id="w3t-iQ-zxs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="wPM-dr-dCS"/>
             <connections>
                 <outlet property="away" destination="PI9-8q-XG6" id="7iK-uw-MYw"/>
-                <outlet property="awayLogo" destination="qio-E2-CLU" id="1BU-vP-NfY"/>
+                <outlet property="awayLogo" destination="dMa-EJ-Kvz" id="vex-rV-pgZ"/>
                 <outlet property="awayScore" destination="kNA-Xh-aw4" id="p8U-GE-9Qa"/>
                 <outlet property="home" destination="kw9-bV-hv5" id="lSc-34-VQe"/>
-                <outlet property="homeLogo" destination="A77-G8-Rht" id="pxp-go-jE0"/>
+                <outlet property="homeLogo" destination="PYA-52-ul0" id="tM2-hs-EF5"/>
                 <outlet property="homeScore" destination="tky-MX-Tlq" id="6nv-0R-So4"/>
                 <outlet property="notes" destination="6F7-KV-iGr" id="XjX-OC-8yc"/>
                 <outlet property="status" destination="Bfo-zZ-xXY" id="o4l-Xh-9in"/>
             </connections>
-            <point key="canvasLocation" x="-63" y="72.5"/>
+            <point key="canvasLocation" x="-63" y="181.5"/>
         </collectionReusableView>
     </objects>
 </document>

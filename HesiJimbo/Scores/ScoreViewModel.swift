@@ -1,10 +1,11 @@
 import Foundation
 import IGListKit
+import PromiseKit
 
 class ScoreViewModel {
 	struct Team {
 		let name: String
-		let logo: URL
+		let logo: Promise<UIImage>
 		let score: String
 	}
 

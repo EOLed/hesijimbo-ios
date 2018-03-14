@@ -9,11 +9,13 @@ class AppCoordinator {
 	}
 
 	func start(window: UIWindow, theme: Theme) {
+		let session = URLSession.shared
+
 		presentingController = UITabBarController()
 		presentingController.setViewControllers(
 			[
-				buildVideosController(),
-				buildScoresController()
+				buildVideosController(session: session),
+				buildScoresController(session: session)
 			],
 			animated: false
 		)
@@ -33,8 +35,8 @@ class AppCoordinator {
 		window.makeKeyAndVisible()
 	}
 
-	private func buildVideosController() -> UINavigationController {
-		let service = FetchVideoFeedServiceImpl(session: .shared, dateProvider: dateProvider)
+	private func buildVideosController(session: URLSession) -> UINavigationController {
+		let service = FetchVideoFeedServiceImpl(session: session, dateProvider: dateProvider)
 		let videos = VideoFeedController(viewModel: VideoFeedViewModel(service: service), theme: .dark)
 		videos.tabBarItem = UITabBarItem(
 			title: "Videos",
@@ -45,8 +47,8 @@ class AppCoordinator {
 		return UINavigationController(rootViewController: videos)
 	}
 
-	private func buildScoresController() -> UINavigationController {
-		let service = FetchScoresServiceImpl()
+	private func buildScoresController(session: URLSession) -> UINavigationController {
+		let service = FetchScoresServiceImpl(session: session)
 		let scores = ScoresController(
 			viewModel: ScoresViewModel(date: dateProvider.get(), service: service),
 			theme: .dark
