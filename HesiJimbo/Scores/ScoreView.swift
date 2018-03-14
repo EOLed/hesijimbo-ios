@@ -36,9 +36,19 @@ class ScoreView: UICollectionViewCell, ListBindable {
 		notes.textColor = viewModel.theme.subtleColor
 		status.textColor = viewModel.theme.bodyColor
 
+		home.text = viewModel.home.name
+		away.text = viewModel.away.name
+
+		homeScore.text = viewModel.home.score
+		awayScore.text = viewModel.away.score
+
+		status.text = viewModel.status
+		notes.text = viewModel.notes
+
 		load(logo: viewModel.home.logo, on: homeLogo)
 		load(logo: viewModel.away.logo, on: awayLogo)
 	}
+	
 
 	private func load(logo: Promise<UIImage>, on imageView: UIImageView) {
 		_ = logo.done(on: DispatchQueue.global(qos: .background)) { logoImage in

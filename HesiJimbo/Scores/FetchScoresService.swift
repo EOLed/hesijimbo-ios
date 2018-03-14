@@ -6,32 +6,95 @@ protocol FetchScoresService {
 }
 
 class FetchScoresServiceImpl: FetchScoresService {
+	private enum Error: Int {
+		case invalidUrl
+		case invalidResponse
+
+		static let domain = "com.hesijimbo.FetchScoresServiceImpl"
+	}
+
 	private let session: URLSession
 
 	init(session: URLSession) {
 		self.session = session
 	}
 
+	private func scoreboardUrl(for date: Date) -> URL {
+		guard let url = URL(string: "https://data.nba.net/prod/v2/20180313/scoreboard.json") else {
+			fatalError("Could not build scoreboard url")
+		}
+
+		return url
+	}
+
 	func perform() -> Promise<[ScoreViewModel]> {
-		let tor = ScoreViewModel.Team(
-			name: "Toronto",
-			logo: logo(from: "https://cdn.nba.net/assets/logos/teams/secondary/web/TOR.png"),
-			score: "100"
+		return session.dataTask(.promise, with: URLRequest(url: scoreboardUrl(for: Date())))
+			.then { self.toDictionary($0.data) }
+			.then { self.toViewModels($0) }
+	}
+
+	private func toDictionary(_ data: Data) -> Promise<[String : AnyObject]> {
+		guard let dictionary = try! JSONSerialization.jsonObject(with: data) as? [String : AnyObject] else {
+			return Promise(error: NSError(
+				domain: Error.domain,
+				code: Error.invalidResponse.rawValue,
+				userInfo: nil
+			))
+		}
+
+		return Promise.value(dictionary)
+	}
+
+	private func toViewModels(_ dictionary: [String : AnyObject]) -> Promise<[ScoreViewModel]> {
+		guard let games = dictionary["games"] as? [[String : AnyObject]] else {
+			return Promise(error: NSError(
+				domain: Error.domain,
+				code: Error.invalidResponse.rawValue,
+				userInfo: nil
+			))
+		}
+
+		return Promise.value(games.map { toViewModel($0) })
+	}
+
+	private func toViewModel(_ dictionary: [String : AnyObject]) -> ScoreViewModel {
+		guard let gameId = dictionary["gameId"] as? String,
+			let homeTeam = dictionary["hTeam"] as? [String : AnyObject],
+			let homeTeamId = homeTeam["teamId"] as? String,
+			let homeScore = homeTeam["score"] as? String,
+			let awayTeam = dictionary["vTeam"] as? [String : AnyObject],
+			let awayTeamId = awayTeam["teamId"] as? String,
+			let awayScore = awayTeam["score"] as? String,
+			let status = dictionary["statusNum"] as? Int,
+			let nugget = dictionary["nugget"] as? [String : AnyObject],
+			let notes = nugget["text"] as? String else {
+				fatalError("Could not convert dictionary to view model")
+		}
+
+		guard let home = Team.by(id: homeTeamId), let away = Team.by(id: awayTeamId) else {
+			fatalError("Could not match teams by id")
+		}
+
+		let homeViewModel = ScoreViewModel.Team(
+			name: home.city,
+			logo: logo(from: "https://cdn.nba.net/assets/logos/teams/secondary/web/\(home.triCode).png"),
+			score: homeScore
 		)
 
-		let por = ScoreViewModel.Team(
-			name: "Portland",
-			logo: logo(from: "https://cdn.nba.net/assets/logos/teams/secondary/web/POR.png"),
-			score: "99"
+		let awayViewModel = ScoreViewModel.Team(
+			name: away.city,
+			logo: logo(from: "https://cdn.nba.net/assets/logos/teams/secondary/web/\(away.triCode).png"),
+			score: awayScore
 		)
 
-		return Promise.value([
-			ScoreViewModel(id: "1", home: tor, away: por, status: "Final", notes: "Hi", theme: .dark),
-			ScoreViewModel(id: "2", home: por, away: tor, status: "Final", notes: "Good", theme: .dark),
-			ScoreViewModel(id: "3", home: tor, away: por, status: "Final", notes: "", theme: .dark),
-			ScoreViewModel(id: "4", home: por, away: tor, status: "Final", notes: "", theme: .dark),
-			ScoreViewModel(id: "5", home: tor, away: por, status: "Final", notes: "", theme: .dark)
-			])
+		return ScoreViewModel(
+			id: gameId,
+			home: homeViewModel,
+			away: awayViewModel,
+			status: status == 3 ? "Final" : "",
+			notes: notes,
+			theme: .dark
+		)
 	}
 
 	private func logo(from url: String) -> Promise<UIImage> {

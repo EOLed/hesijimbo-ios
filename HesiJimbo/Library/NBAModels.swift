@@ -35,7 +35,7 @@ struct Team {
 	static let rockets = Team(id: "1610612745", triCode: "HOU", city: "Houston", name: "Rockets")
 	static let sixers = Team(id: "1610612755", triCode: "PHI", city: "Philadelphia", name: "76ers")
 	static let spurs = Team(id: "1610612759", triCode: "SAS", city: "San Antonio", name: "Spurs")
-	static let suns = Team(id: "1610612756", triCode: "PHO", city: "Phoenix", name: "Suns")
+	static let suns = Team(id: "1610612756", triCode: "PHX", city: "Phoenix", name: "Suns")
 	static let thunder = Team(id: "1610612760", triCode: "OKC", city: "Oklahoma City", name: "Thunder")
 	static let timberwolves = Team(id: "1610612750", triCode: "MIN", city: "Minnesota", name: "Timberwolves")
 	static let trailBlazers = Team(id: "1610612757", triCode: "POR", city: "Portland", name: "Trail Blazers")
